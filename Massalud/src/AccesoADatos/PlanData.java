@@ -136,31 +136,5 @@ public class PlanData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan " + ex.getMessage());
         }
     }
-    
-    public Plan buscarPlanPorNombre(String nombre){
-        Plan plan = null;
-        try {
-            String sql = "SELECT * FROM planes WHERE tipoDePlan = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, nombre);
-        ResultSet rs = ps.executeQuery();
-
-        if (rs.next()) {
-            plan = new Plan();
-            plan.setIdPlan(rs.getInt("idPlan"));
-            plan.setTipoDePlan(rs.getString("tipoDePlan"));
-            plan.setPrecio(rs.getDouble("precio"));
-            plan.setAdherentes(rs.getInt("adherentes"));            
-        } else {
-            JOptionPane.showMessageDialog(null, "No se encontró el plan correspondiente");
-        }
-        ps.close();
-    } catch (SQLException ex) {
-        // Manejo de excepciones
-        ex.printStackTrace();
-    }
-
-    return plan;
-    }
-    
+      
 }
