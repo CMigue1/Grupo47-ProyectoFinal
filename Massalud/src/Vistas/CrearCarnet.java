@@ -10,6 +10,7 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
      private DefaultTableModel modelo = new DefaultTableModel();
 
     private Principal principal;
+    
     public CrearCarnet(Principal principal) {
         
         initComponents();
@@ -17,8 +18,11 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
+   
+        
     }
 
+ 
  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -26,8 +30,8 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
 
         VENCIMIENTO = new javax.swing.JLabel();
         Plan = new javax.swing.JLabel();
-        nombreCompleto1 = new javax.swing.JLabel();
-        nroAfiliado1 = new javax.swing.JLabel();
+        nombreCompleto = new javax.swing.JLabel();
+        nroAfiliado = new javax.swing.JLabel();
         jBguardarCarnet = new javax.swing.JButton();
         jBregresar = new javax.swing.JButton();
         jLfondoVista = new javax.swing.JLabel();
@@ -47,15 +51,15 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         Plan.setText("MAS JOVEN");
         getContentPane().add(Plan, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 100, 40));
 
-        nombreCompleto1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
-        nombreCompleto1.setForeground(new java.awt.Color(255, 255, 255));
-        nombreCompleto1.setText("MA VALENTINA MARQUEZ");
-        getContentPane().add(nombreCompleto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 210, 40));
+        nombreCompleto.setFont(new java.awt.Font("Montserrat SemiBold", 1, 14)); // NOI18N
+        nombreCompleto.setForeground(new java.awt.Color(255, 255, 255));
+        nombreCompleto.setText("MA VALENTINA MARQUEZ");
+        getContentPane().add(nombreCompleto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 210, 40));
 
-        nroAfiliado1.setFont(new java.awt.Font("Montserrat SemiBold", 1, 24)); // NOI18N
-        nroAfiliado1.setForeground(new java.awt.Color(255, 255, 255));
-        nroAfiliado1.setText("00 3742 596 40");
-        getContentPane().add(nroAfiliado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 310, 210, 40));
+        nroAfiliado.setFont(new java.awt.Font("Montserrat SemiBold", 1, 24)); // NOI18N
+        nroAfiliado.setForeground(new java.awt.Color(255, 255, 255));
+        nroAfiliado.setText("00 3742 596 40");
+        getContentPane().add(nroAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 310, 210, 40));
 
         jBguardarCarnet.setBackground(new java.awt.Color(255, 255, 255));
         jBguardarCarnet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Bguardar-01.png"))); // NOI18N
@@ -106,9 +110,10 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBguardarCarnet;
     private javax.swing.JButton jBregresar;
     private javax.swing.JLabel jLfondoVista;
-    private javax.swing.JLabel nombreCompleto1;
-    private javax.swing.JLabel nroAfiliado1;
+    private javax.swing.JLabel nombreCompleto;
+    private javax.swing.JLabel nroAfiliado;
     // End of variables declaration//GEN-END:variables
+
 
 
 

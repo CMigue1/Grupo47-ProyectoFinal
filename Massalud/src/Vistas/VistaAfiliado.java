@@ -5,9 +5,14 @@ import AccesoADatos.PlanData;
 import Entidades.Afiliado;
 import Entidades.Plan;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.JComboBox;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +28,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     public VistaAfiliado(Principal principal) {
         this.principal = principal;
         initComponents();
-
         planD = new PlanData();
         listaP = planD.listarPlanes();
         afilData = new AfiliadoData();
@@ -36,6 +40,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         bui.setNorthPane(null);
         this.setSize(1062, 720);
         armarCabecera();
+        
 
     }
 
@@ -279,7 +284,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBcarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcarnetActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_jBcarnetActionPerformed
 
     private void jBCrearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearOrdenActionPerformed
@@ -541,5 +546,8 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
             modelo.addRow(new Object[]{a.getIdAfiliado(), a.getNombre(), a.getApellido(), a.getDni(), a.getDomicilio(), a.getTelefono()});
         }
     }
+
+
+
 
 }
