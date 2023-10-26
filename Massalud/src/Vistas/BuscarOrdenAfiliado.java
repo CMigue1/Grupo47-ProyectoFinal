@@ -30,7 +30,9 @@ public class BuscarOrdenAfiliado extends javax.swing.JInternalFrame {
         jTidAfiliado = new javax.swing.JTextField();
         texto = new javax.swing.JLabel();
         jBuscarAfiliadoporID = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jBregresarlatIzq = new javax.swing.JButton();
+        jBregresarlatDer1 = new javax.swing.JButton();
+        jBregresar = new javax.swing.JButton();
         jLfondoVista = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -82,15 +84,38 @@ public class BuscarOrdenAfiliado extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jBuscarAfiliadoporID, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 30, 20));
 
-        jButton1.setText("regresar");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBregresarlatIzq.setBorder(null);
+        jBregresarlatIzq.setBorderPainted(false);
+        jBregresarlatIzq.setContentAreaFilled(false);
+        jBregresarlatIzq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBregresarlatIzqActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 610, -1, -1));
+        getContentPane().add(jBregresarlatIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 690));
+
+        jBregresarlatDer1.setBorder(null);
+        jBregresarlatDer1.setBorderPainted(false);
+        jBregresarlatDer1.setContentAreaFilled(false);
+        jBregresarlatDer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBregresarlatDer1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBregresarlatDer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 6, 300, 690));
+
+        jBregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARoff-01.png"))); // NOI18N
+        jBregresar.setBorder(null);
+        jBregresar.setBorderPainted(false);
+        jBregresar.setContentAreaFilled(false);
+        jBregresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
+        jBregresar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
+        jBregresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBregresarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 50, 40));
 
         jLfondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/vistabuscarOrdenAfiliado-01.png"))); // NOI18N
         jLfondoVista.setMaximumSize(new java.awt.Dimension(1062, 720));
@@ -106,14 +131,24 @@ public class BuscarOrdenAfiliado extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBuscarAfiliadoporIDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBregresarlatIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatIzqActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBregresarlatIzqActionPerformed
+
+    private void jBregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBregresarActionPerformed
+
+    private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBregresarlatDer1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBregresar;
+    private javax.swing.JButton jBregresarlatDer1;
+    private javax.swing.JButton jBregresarlatIzq;
     private javax.swing.JButton jBuscarAfiliadoporID;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTAfiliados;

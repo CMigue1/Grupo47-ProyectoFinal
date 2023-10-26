@@ -37,6 +37,7 @@ public class VistaPlanFamilia extends javax.swing.JInternalFrame {
         jTmedicamentos = new javax.swing.JTextField();
         jBSiguiente = new javax.swing.JButton();
         jBAnterior = new javax.swing.JButton();
+        imgbotonsig = new javax.swing.JLabel();
         FONDO = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(1120, 720));
@@ -57,69 +58,86 @@ public class VistaPlanFamilia extends javax.swing.JInternalFrame {
         jBGuardar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BGuardarIN-01.png"))); // NOI18N
         getContentPane().add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, -1, -1));
 
+        jTImporte.setBackground(new java.awt.Color(247, 247, 249));
         jTImporte.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTImporte.setForeground(new java.awt.Color(153, 153, 153));
         jTImporte.setText("50%");
         jTImporte.setBorder(null);
         getContentPane().add(jTImporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 530, 120, 20));
 
+        jTcantAdherentes.setBackground(new java.awt.Color(247, 247, 249));
         jTcantAdherentes.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTcantAdherentes.setForeground(new java.awt.Color(153, 153, 153));
         jTcantAdherentes.setText("50%");
         jTcantAdherentes.setBorder(null);
         getContentPane().add(jTcantAdherentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 460, 120, 20));
 
+        jTcirujias.setBackground(new java.awt.Color(247, 247, 249));
         jTcirujias.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTcirujias.setForeground(new java.awt.Color(153, 153, 153));
         jTcirujias.setText("50%");
         jTcirujias.setBorder(null);
         getContentPane().add(jTcirujias, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 120, 20));
 
+        jTlab.setBackground(new java.awt.Color(247, 247, 249));
         jTlab.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTlab.setForeground(new java.awt.Color(153, 153, 153));
         jTlab.setText("50%");
         jTlab.setBorder(null);
         getContentPane().add(jTlab, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 400, 120, 20));
 
+        jLhospital.setBackground(new java.awt.Color(247, 247, 249));
         jLhospital.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jLhospital.setForeground(new java.awt.Color(153, 153, 153));
         jLhospital.setText("50%");
         jLhospital.setBorder(null);
         getContentPane().add(jLhospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 120, 20));
 
+        jTconsultas.setBackground(new java.awt.Color(247, 247, 249));
         jTconsultas.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTconsultas.setForeground(new java.awt.Color(153, 153, 153));
         jTconsultas.setText("80%");
         jTconsultas.setBorder(null);
         getContentPane().add(jTconsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 345, 120, 20));
 
+        jTimporteAdherentes.setBackground(new java.awt.Color(247, 247, 249));
         jTimporteAdherentes.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTimporteAdherentes.setForeground(new java.awt.Color(153, 153, 153));
         jTimporteAdherentes.setText("50%");
         jTimporteAdherentes.setBorder(null);
         getContentPane().add(jTimporteAdherentes, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 535, 110, 20));
 
+        jTmedicamentos.setBackground(new java.awt.Color(247, 247, 249));
         jTmedicamentos.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTmedicamentos.setForeground(new java.awt.Color(153, 153, 153));
         jTmedicamentos.setText("100%");
         jTmedicamentos.setBorder(null);
         getContentPane().add(jTmedicamentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 345, 120, 20));
 
-        jBSiguiente.setText("Siguiente");
+        jBSiguiente.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jBSiguiente.setBorder(null);
+        jBSiguiente.setBorderPainted(false);
+        jBSiguiente.setContentAreaFilled(false);
         jBSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 660, -1, -1));
+        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 20, 20));
 
-        jBAnterior.setText("Anterior");
+        jBAnterior.setFont(new java.awt.Font("Montserrat", 0, 24)); // NOI18N
+        jBAnterior.setBorder(null);
+        jBAnterior.setBorderPainted(false);
+        jBAnterior.setContentAreaFilled(false);
         jBAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAnteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, -1, -1));
+        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, 20, 40));
+
+        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/2-01.png"))); // NOI18N
+        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/vistaFAMILIA-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));
@@ -140,6 +158,7 @@ public class VistaPlanFamilia extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDO;
+    private javax.swing.JLabel imgbotonsig;
     private javax.swing.JButton jBAnterior;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBSiguiente;

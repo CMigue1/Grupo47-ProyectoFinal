@@ -419,59 +419,69 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         });
         getContentPane().add(txtDniAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 150, 20));
 
-        btnGuardadAf.setText("guardar");
+        btnGuardadAf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaOFF-01.png"))); // NOI18N
         btnGuardadAf.setBorder(null);
         btnGuardadAf.setContentAreaFilled(false);
+        btnGuardadAf.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaIN-01.png"))); // NOI18N
+        btnGuardadAf.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaIN-01.png"))); // NOI18N
         btnGuardadAf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardadAfActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardadAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 50, -1));
+        getContentPane().add(btnGuardadAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(926, 128, 70, -1));
 
-        btnGuardarPr.setText("guardar");
+        btnGuardarPr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaOFF-01.png"))); // NOI18N
         btnGuardarPr.setBorder(null);
         btnGuardarPr.setContentAreaFilled(false);
+        btnGuardarPr.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaIN-01.png"))); // NOI18N
+        btnGuardarPr.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/GUARDARconsultaIN-01.png"))); // NOI18N
         btnGuardarPr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarPrActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGuardarPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, 50, -1));
+        getContentPane().add(btnGuardarPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(926, 420, -1, 60));
 
         jCPlan1.setBackground(new java.awt.Color(255, 255, 255));
         jCPlan1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jCPlan1.setForeground(new java.awt.Color(153, 153, 153));
         jCPlan1.setToolTipText("Tipo de Plan");
-        jCPlan1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        jCPlan1.setBorder(null);
         jCPlan1.setEnabled(false);
         jCPlan1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCPlan1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 110, 20));
+        getContentPane().add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 110, 30));
 
         cbxEspecialidad.setBackground(new java.awt.Color(255, 255, 255));
         cbxEspecialidad.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         cbxEspecialidad.setForeground(new java.awt.Color(153, 153, 153));
         cbxEspecialidad.setToolTipText("Tipo de Plan");
-        cbxEspecialidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
+        cbxEspecialidad.setBorder(null);
         cbxEspecialidad.setEnabled(false);
         cbxEspecialidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxEspecialidadActionPerformed(evt);
             }
         });
-        getContentPane().add(cbxEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 110, 20));
+        getContentPane().add(cbxEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 160, 30));
 
+        cbxEstadoAf.setBackground(new java.awt.Color(255, 255, 255));
+        cbxEstadoAf.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         cbxEstadoAf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        cbxEstadoAf.setBorder(null);
         cbxEstadoAf.setEnabled(false);
-        getContentPane().add(cbxEstadoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 110, -1));
+        getContentPane().add(cbxEstadoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 120, 30));
 
+        cbxEstadoPr.setBackground(new java.awt.Color(255, 255, 255));
+        cbxEstadoPr.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         cbxEstadoPr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        cbxEstadoPr.setBorder(null);
         cbxEstadoPr.setEnabled(false);
-        getContentPane().add(cbxEstadoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 110, -1));
+        getContentPane().add(cbxEstadoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 120, 30));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/CONSULTAvista-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));

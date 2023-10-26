@@ -33,6 +33,8 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         nombreCompleto = new javax.swing.JLabel();
         nroAfiliado = new javax.swing.JLabel();
         jBguardarCarnet = new javax.swing.JButton();
+        jBregresarlatIzq = new javax.swing.JButton();
+        jBregresarlatDer1 = new javax.swing.JButton();
         jBregresar = new javax.swing.JButton();
         jLfondoVista = new javax.swing.JLabel();
 
@@ -75,15 +77,38 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jBguardarCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 150, 60));
 
-        jBregresar.setText("regresar");
+        jBregresarlatIzq.setBorder(null);
+        jBregresarlatIzq.setBorderPainted(false);
+        jBregresarlatIzq.setContentAreaFilled(false);
+        jBregresarlatIzq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBregresarlatIzqActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBregresarlatIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 690));
+
+        jBregresarlatDer1.setBorder(null);
+        jBregresarlatDer1.setBorderPainted(false);
+        jBregresarlatDer1.setContentAreaFilled(false);
+        jBregresarlatDer1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBregresarlatDer1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBregresarlatDer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 6, 300, 690));
+
+        jBregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARoff-01.png"))); // NOI18N
         jBregresar.setBorder(null);
         jBregresar.setBorderPainted(false);
+        jBregresar.setContentAreaFilled(false);
+        jBregresar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
+        jBregresar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
         jBregresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBregresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 610, -1, -1));
+        getContentPane().add(jBregresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 50, 40));
 
         jLfondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/vistaCrearTarjeta-01.png"))); // NOI18N
         jLfondoVista.setMaximumSize(new java.awt.Dimension(1062, 720));
@@ -99,6 +124,14 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBguardarCarnetActionPerformed
 
+    private void jBregresarlatIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatIzqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBregresarlatIzqActionPerformed
+
+    private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBregresarlatDer1ActionPerformed
+
     private void jBregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBregresarActionPerformed
@@ -109,6 +142,8 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
     private javax.swing.JLabel VENCIMIENTO;
     private javax.swing.JButton jBguardarCarnet;
     private javax.swing.JButton jBregresar;
+    private javax.swing.JButton jBregresarlatDer1;
+    private javax.swing.JButton jBregresarlatIzq;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JLabel nombreCompleto;
     private javax.swing.JLabel nroAfiliado;
