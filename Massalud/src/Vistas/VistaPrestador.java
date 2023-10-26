@@ -333,7 +333,7 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jTApellido1.setText("  Apellido");
         jTdocumento1.setText("   Nro de Documento");
         jTtelefono1.setText("   Telefono");
-        jTdireccion2.setText("   Direccion");
+        jTdireccion2.setText("   Domicilio");
         jCEspecialidad.setSelectedIndex(0);
 
     }//GEN-LAST:event_jBagregarPrestadorActionPerformed
@@ -343,7 +343,7 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jTApellido1.setText("  Apellido");
         jTdocumento1.setText("   Nro de Documento");
         jTtelefono1.setText("   Telefono");
-        jTdireccion2.setText("   Direccion");
+        jTdireccion2.setText("   Domicilio");
         jCEspecialidad.setSelectedIndex(0);
     }//GEN-LAST:event_jBLimpiarActionPerformed
 
@@ -395,7 +395,7 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTdocumento1MouseClicked
 
     private void jTdireccion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdireccion2MouseClicked
-        if (jTdireccion2.getText().trim().equals("Direccion")) {
+        if (jTdireccion2.getText().trim().equals("Domicilio")) {
             jTdireccion2.setText("");
         }
          if (jTNombre.getText().isEmpty()) {

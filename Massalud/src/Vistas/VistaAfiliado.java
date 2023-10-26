@@ -334,6 +334,12 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
             }
             Afiliado afiliado = new Afiliado(nombre, apellido, domicilio, dni, telefono, plan, true);
             afilData.altaAfilidado(afiliado);
+            jTNombre.setText("   Nombre");
+            jTApellido1.setText("  Apellido");
+            jTdocumento.setText("   Nro de Documento");
+            jTtelefono.setText("   Telefono");
+            jTdireccion.setText("   Domicilio");
+            jCPlan1.setSelectedIndex(0);
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -355,7 +361,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
 
     private void jTNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTNombreMouseClicked
         // TODO add your handling code here:
-        if (jTNombre.getText().equals("Nombre")) {
+        if (jTNombre.getText().trim().equals("Nombre")) {
 
             jTNombre.setText("");
             jTNombre.setForeground(Color.black);
@@ -390,7 +396,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBlimpiarActionPerformed
 
     private void jTApellido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTApellido1MouseClicked
-        if (jTApellido1.getText().equals("Apellido")) {
+        if (jTApellido1.getText().trim().equals("Apellido")) {
             jTApellido1.setText("");
             jTApellido1.setForeground(Color.black);
         }
@@ -414,7 +420,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTApellido1MouseClicked
 
     private void jTdocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdocumentoMouseClicked
-        if (jTdocumento.getText().equals("Documento")) {
+        if (jTdocumento.getText().trim().equals("Documento")) {
             jTdocumento.setText("");
             jTdocumento.setForeground(Color.black);
         }
@@ -439,7 +445,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTdocumentoMouseClicked
 
     private void jTdireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdireccionMouseClicked
-        if (jTdireccion.getText().equals("Direccion")) {
+        if (jTdireccion.getText().trim().equals("Direccion")) {
             jTdireccion.setText("");
             jTdireccion.setForeground(Color.black);
         }
