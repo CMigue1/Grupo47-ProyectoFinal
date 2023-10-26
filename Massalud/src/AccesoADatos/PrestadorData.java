@@ -74,6 +74,8 @@ public class PrestadorData {
                 prestador.setEspecialidad(especialidadData.buscarEspecialidadPorId(rs.getInt("idEspecialidad")));
                 prestador.setActivo(rs.getBoolean("activo"));
 
+            }else{
+                JOptionPane.showMessageDialog(null, "No existe el prestador");
             }
             ps.close();
         } catch (SQLException ex) {

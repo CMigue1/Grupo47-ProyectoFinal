@@ -5,8 +5,10 @@
 package Vistas;
 
 import AccesoADatos.AfiliadoData;
+import AccesoADatos.PrestadorData;
 import Entidades.Afiliado;
-import javax.swing.ImageIcon;
+import Entidades.Prestador;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -16,381 +18,459 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class VistaConsultas extends javax.swing.JInternalFrame {
 
-   private AfiliadoData afilData;
-   private Principal principal=new Principal();
-   
+    private AfiliadoData afilData;
+    private PrestadorData presData;
+    private Principal principal = new Principal();
+
     public VistaConsultas(Principal principal) {
         initComponents();
-        this.principal=principal;
+        this.principal = principal;
         afilData = new AfiliadoData();
+        presData = new PrestadorData();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
         this.setSize(1062, 720);
+        btnGuardadAf.setVisible(false);
+        btnGuardarPr.setVisible(false);
     }
 
-  
-
-  
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTIdAfiliado = new javax.swing.JTextField();
-        jTApellidoAF = new javax.swing.JTextField();
-        jTestadoPr = new javax.swing.JTextField();
-        jTtelefonoAF = new javax.swing.JTextField();
-        jTdomicilioAF = new javax.swing.JTextField();
-        jTNombreAF = new javax.swing.JTextField();
-        jTdocumento = new javax.swing.JTextField();
-        jBuscarDniPrestador = new javax.swing.JButton();
-        jBuscarPrestadorMatricula = new javax.swing.JButton();
-        jTbuscarDNIprestador = new javax.swing.JTextField();
-        jTmatricula = new javax.swing.JTextField();
-        jTMatricula = new javax.swing.JTextField();
-        jTtelefonoPR = new javax.swing.JTextField();
-        jTdomicilioPR = new javax.swing.JTextField();
-        jTNombrePR = new javax.swing.JTextField();
-        jTApellidoPR = new javax.swing.JTextField();
-        jTdocumentoPR = new javax.swing.JTextField();
-        jBuscarporNroAfiliado1 = new javax.swing.JButton();
-        jBuscarAfiliadoDNI1 = new javax.swing.JButton();
-        jBeditarPrestador = new javax.swing.JButton();
-        jBeditarAfiliado = new javax.swing.JButton();
-        jTestadoAF1 = new javax.swing.JTextField();
-        jTplanAF1 = new javax.swing.JTextField();
-        jTdocumentoAF1 = new javax.swing.JTextField();
-        jBguardarcambiosAfiliado = new javax.swing.JButton();
-        jBguardarcambiosPrestador = new javax.swing.JButton();
+        txtAfiliadoId = new javax.swing.JTextField();
+        txtIdAfiliado = new javax.swing.JTextField();
+        txtApellidoAf = new javax.swing.JTextField();
+        txtActivoPr = new javax.swing.JTextField();
+        txtTelefonoAf = new javax.swing.JTextField();
+        txtDomicilioAf = new javax.swing.JTextField();
+        txtNombreAf = new javax.swing.JTextField();
+        txtAfiliadoDni = new javax.swing.JTextField();
+        btnBuscarPrDni = new javax.swing.JButton();
+        btnBuscarPrId = new javax.swing.JButton();
+        txtDocumentoPr = new javax.swing.JTextField();
+        txtMatriculaPrestador = new javax.swing.JTextField();
+        txtMatriculaPr = new javax.swing.JTextField();
+        txtTelefonoPr = new javax.swing.JTextField();
+        txtDomicilioPr = new javax.swing.JTextField();
+        txtNombrePr = new javax.swing.JTextField();
+        txtApellidoPr = new javax.swing.JTextField();
+        txtDniPr = new javax.swing.JTextField();
+        btnBuscarAfDni = new javax.swing.JButton();
+        btnBuscarAfId = new javax.swing.JButton();
+        btnEditarPr = new javax.swing.JButton();
+        btnEditarAf = new javax.swing.JButton();
+        txtActivoAf = new javax.swing.JTextField();
+        txtPlanAf = new javax.swing.JTextField();
+        txtDniAf = new javax.swing.JTextField();
+        btnGuardadAf = new javax.swing.JButton();
+        btnGuardarPr = new javax.swing.JButton();
+        txtEspecialidad = new javax.swing.JTextField();
         FONDO = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(247, 247, 249));
-        jTextField1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField1.setText("Ingrese ID Afiliado");
-        jTextField1.setBorder(null);
-        jTextField1.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTextField1.setSelectionColor(new java.awt.Color(153, 153, 153));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 120, -1));
-
-        jTIdAfiliado.setBackground(new java.awt.Color(247, 247, 249));
-        jTIdAfiliado.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTIdAfiliado.setForeground(new java.awt.Color(153, 153, 153));
-        jTIdAfiliado.setText("2");
-        jTIdAfiliado.setBorder(null);
-        jTIdAfiliado.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTIdAfiliado.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTIdAfiliado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTIdAfiliadoActionPerformed(evt);
+        txtAfiliadoId.setBackground(new java.awt.Color(247, 247, 249));
+        txtAfiliadoId.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtAfiliadoId.setForeground(new java.awt.Color(51, 51, 51));
+        txtAfiliadoId.setText("Ingrese ID Afiliado");
+        txtAfiliadoId.setBorder(null);
+        txtAfiliadoId.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtAfiliadoId.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtAfiliadoId.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAfiliadoIdMouseClicked(evt);
             }
         });
-        getContentPane().add(jTIdAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 140, 20));
-
-        jTApellidoAF.setBackground(new java.awt.Color(247, 247, 249));
-        jTApellidoAF.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTApellidoAF.setForeground(new java.awt.Color(153, 153, 153));
-        jTApellidoAF.setText("Perez");
-        jTApellidoAF.setBorder(null);
-        jTApellidoAF.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTApellidoAF.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTApellidoAF.addActionListener(new java.awt.event.ActionListener() {
+        txtAfiliadoId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTApellidoAFActionPerformed(evt);
+                txtAfiliadoIdActionPerformed(evt);
             }
         });
-        getContentPane().add(jTApellidoAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 200, 20));
+        getContentPane().add(txtAfiliadoId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 120, -1));
 
-        jTestadoPr.setBackground(new java.awt.Color(247, 247, 249));
-        jTestadoPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTestadoPr.setForeground(new java.awt.Color(153, 153, 153));
-        jTestadoPr.setText("Activo");
-        jTestadoPr.setBorder(null);
-        jTestadoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTestadoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTestadoPr.addActionListener(new java.awt.event.ActionListener() {
+        txtIdAfiliado.setEditable(false);
+        txtIdAfiliado.setBackground(new java.awt.Color(247, 247, 249));
+        txtIdAfiliado.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtIdAfiliado.setForeground(new java.awt.Color(153, 153, 153));
+        txtIdAfiliado.setText("2");
+        txtIdAfiliado.setBorder(null);
+        txtIdAfiliado.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtIdAfiliado.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtIdAfiliado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTestadoPrActionPerformed(evt);
+                txtIdAfiliadoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTestadoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 100, 20));
+        getContentPane().add(txtIdAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 140, 20));
 
-        jTtelefonoAF.setBackground(new java.awt.Color(247, 247, 249));
-        jTtelefonoAF.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTtelefonoAF.setForeground(new java.awt.Color(153, 153, 153));
-        jTtelefonoAF.setText("2392 689523");
-        jTtelefonoAF.setBorder(null);
-        jTtelefonoAF.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTtelefonoAF.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTtelefonoAF.addActionListener(new java.awt.event.ActionListener() {
+        txtApellidoAf.setEditable(false);
+        txtApellidoAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtApellidoAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtApellidoAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtApellidoAf.setText("Perez");
+        txtApellidoAf.setBorder(null);
+        txtApellidoAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtApellidoAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtApellidoAf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTtelefonoAFActionPerformed(evt);
+                txtApellidoAfActionPerformed(evt);
             }
         });
-        getContentPane().add(jTtelefonoAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 140, 20));
+        getContentPane().add(txtApellidoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 200, 20));
 
-        jTdomicilioAF.setBackground(new java.awt.Color(247, 247, 249));
-        jTdomicilioAF.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTdomicilioAF.setForeground(new java.awt.Color(153, 153, 153));
-        jTdomicilioAF.setText("Lisandro de la Torre, Nro 2046 , Trenque Lauquen, Bs As.");
-        jTdomicilioAF.setBorder(null);
-        jTdomicilioAF.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTdomicilioAF.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTdomicilioAF.addActionListener(new java.awt.event.ActionListener() {
+        txtActivoPr.setEditable(false);
+        txtActivoPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtActivoPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtActivoPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtActivoPr.setText("Activo");
+        txtActivoPr.setBorder(null);
+        txtActivoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtActivoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtActivoPr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdomicilioAFActionPerformed(evt);
+                txtActivoPrActionPerformed(evt);
             }
         });
-        getContentPane().add(jTdomicilioAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 270, 20));
+        getContentPane().add(txtActivoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 100, 20));
 
-        jTNombreAF.setBackground(new java.awt.Color(247, 247, 249));
-        jTNombreAF.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTNombreAF.setForeground(new java.awt.Color(153, 153, 153));
-        jTNombreAF.setText("Juan");
-        jTNombreAF.setBorder(null);
-        jTNombreAF.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTNombreAF.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTNombreAF.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoAf.setEditable(false);
+        txtTelefonoAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtTelefonoAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtTelefonoAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtTelefonoAf.setText("2392 689523");
+        txtTelefonoAf.setBorder(null);
+        txtTelefonoAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtTelefonoAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtTelefonoAf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTNombreAFActionPerformed(evt);
+                txtTelefonoAfActionPerformed(evt);
             }
         });
-        getContentPane().add(jTNombreAF, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 140, 20));
+        getContentPane().add(txtTelefonoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 140, 20));
 
-        jTdocumento.setEditable(false);
-        jTdocumento.setBackground(new java.awt.Color(247, 247, 249));
-        jTdocumento.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jTdocumento.setForeground(new java.awt.Color(51, 51, 51));
-        jTdocumento.setText("Ingrese Nro DNI");
-        jTdocumento.setBorder(null);
-        jTdocumento.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTdocumento.setSelectionColor(new java.awt.Color(153, 153, 153));
-        getContentPane().add(jTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 120, -1));
-
-        jBuscarDniPrestador.setBackground(new java.awt.Color(255, 255, 255));
-        jBuscarDniPrestador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
-        jBuscarDniPrestador.setBorder(null);
-        jBuscarDniPrestador.setBorderPainted(false);
-        jBuscarDniPrestador.setContentAreaFilled(false);
-        jBuscarDniPrestador.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
-        jBuscarDniPrestador.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
-        getContentPane().add(jBuscarDniPrestador, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 30, 30));
-
-        jBuscarPrestadorMatricula.setBackground(new java.awt.Color(255, 255, 255));
-        jBuscarPrestadorMatricula.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
-        jBuscarPrestadorMatricula.setBorder(null);
-        jBuscarPrestadorMatricula.setBorderPainted(false);
-        jBuscarPrestadorMatricula.setContentAreaFilled(false);
-        jBuscarPrestadorMatricula.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
-        jBuscarPrestadorMatricula.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
-        jBuscarPrestadorMatricula.addActionListener(new java.awt.event.ActionListener() {
+        txtDomicilioAf.setEditable(false);
+        txtDomicilioAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtDomicilioAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtDomicilioAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtDomicilioAf.setText("Lisandro de la Torre, Nro 2046 , Trenque Lauquen, Bs As.");
+        txtDomicilioAf.setBorder(null);
+        txtDomicilioAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtDomicilioAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtDomicilioAf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBuscarPrestadorMatriculaActionPerformed(evt);
+                txtDomicilioAfActionPerformed(evt);
             }
         });
-        getContentPane().add(jBuscarPrestadorMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 30, 30));
+        getContentPane().add(txtDomicilioAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 260, 270, 20));
 
-        jTbuscarDNIprestador.setEditable(false);
-        jTbuscarDNIprestador.setBackground(new java.awt.Color(247, 247, 249));
-        jTbuscarDNIprestador.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jTbuscarDNIprestador.setForeground(new java.awt.Color(51, 51, 51));
-        jTbuscarDNIprestador.setText("Ingrese Nro DNI");
-        jTbuscarDNIprestador.setBorder(null);
-        jTbuscarDNIprestador.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTbuscarDNIprestador.setSelectionColor(new java.awt.Color(153, 153, 153));
-        getContentPane().add(jTbuscarDNIprestador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 120, -1));
-
-        jTmatricula.setEditable(false);
-        jTmatricula.setBackground(new java.awt.Color(247, 247, 249));
-        jTmatricula.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        jTmatricula.setForeground(new java.awt.Color(51, 51, 51));
-        jTmatricula.setText("Ingrese Matricula");
-        jTmatricula.setBorder(null);
-        jTmatricula.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTmatricula.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTmatricula.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreAf.setEditable(false);
+        txtNombreAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtNombreAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtNombreAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombreAf.setText("Juan");
+        txtNombreAf.setBorder(null);
+        txtNombreAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtNombreAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtNombreAf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTmatriculaActionPerformed(evt);
+                txtNombreAfActionPerformed(evt);
             }
         });
-        getContentPane().add(jTmatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 120, -1));
+        getContentPane().add(txtNombreAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 140, 20));
 
-        jTMatricula.setBackground(new java.awt.Color(247, 247, 249));
-        jTMatricula.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTMatricula.setForeground(new java.awt.Color(153, 153, 153));
-        jTMatricula.setText("1");
-        jTMatricula.setBorder(null);
-        jTMatricula.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTMatricula.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTMatricula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTMatriculaActionPerformed(evt);
+        txtAfiliadoDni.setBackground(new java.awt.Color(247, 247, 249));
+        txtAfiliadoDni.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtAfiliadoDni.setForeground(new java.awt.Color(51, 51, 51));
+        txtAfiliadoDni.setText("Ingrese el Documento");
+        txtAfiliadoDni.setBorder(null);
+        txtAfiliadoDni.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtAfiliadoDni.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtAfiliadoDni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAfiliadoDniMouseClicked(evt);
             }
         });
-        getContentPane().add(jTMatricula, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 140, 20));
-
-        jTtelefonoPR.setBackground(new java.awt.Color(247, 247, 249));
-        jTtelefonoPR.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTtelefonoPR.setForeground(new java.awt.Color(153, 153, 153));
-        jTtelefonoPR.setText("2392 689523");
-        jTtelefonoPR.setBorder(null);
-        jTtelefonoPR.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTtelefonoPR.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTtelefonoPR.addActionListener(new java.awt.event.ActionListener() {
+        txtAfiliadoDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTtelefonoPRActionPerformed(evt);
+                txtAfiliadoDniActionPerformed(evt);
             }
         });
-        getContentPane().add(jTtelefonoPR, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 140, 20));
+        getContentPane().add(txtAfiliadoDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 120, -1));
 
-        jTdomicilioPR.setBackground(new java.awt.Color(247, 247, 249));
-        jTdomicilioPR.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTdomicilioPR.setForeground(new java.awt.Color(153, 153, 153));
-        jTdomicilioPR.setText("Lisandro de la Torre, Nro 2046 , TL, Bs As.");
-        jTdomicilioPR.setBorder(null);
-        jTdomicilioPR.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTdomicilioPR.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTdomicilioPR.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarPrDni.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarPrDni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
+        btnBuscarPrDni.setBorder(null);
+        btnBuscarPrDni.setBorderPainted(false);
+        btnBuscarPrDni.setContentAreaFilled(false);
+        btnBuscarPrDni.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
+        btnBuscarPrDni.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
+        btnBuscarPrDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdomicilioPRActionPerformed(evt);
+                btnBuscarPrDniActionPerformed(evt);
             }
         });
-        getContentPane().add(jTdomicilioPR, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 240, 20));
+        getContentPane().add(btnBuscarPrDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 30, 30));
 
-        jTNombrePR.setBackground(new java.awt.Color(247, 247, 249));
-        jTNombrePR.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTNombrePR.setForeground(new java.awt.Color(153, 153, 153));
-        jTNombrePR.setText("Juan");
-        jTNombrePR.setBorder(null);
-        jTNombrePR.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTNombrePR.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTNombrePR.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarPrId.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarPrId.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
+        btnBuscarPrId.setBorder(null);
+        btnBuscarPrId.setBorderPainted(false);
+        btnBuscarPrId.setContentAreaFilled(false);
+        btnBuscarPrId.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
+        btnBuscarPrId.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
+        btnBuscarPrId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTNombrePRActionPerformed(evt);
+                btnBuscarPrIdActionPerformed(evt);
             }
         });
-        getContentPane().add(jTNombrePR, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 140, 20));
+        getContentPane().add(btnBuscarPrId, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 30, 30));
 
-        jTApellidoPR.setBackground(new java.awt.Color(247, 247, 249));
-        jTApellidoPR.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTApellidoPR.setForeground(new java.awt.Color(153, 153, 153));
-        jTApellidoPR.setText("Perez");
-        jTApellidoPR.setBorder(null);
-        jTApellidoPR.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTApellidoPR.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTApellidoPR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTApellidoPRActionPerformed(evt);
+        txtDocumentoPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtDocumentoPr.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtDocumentoPr.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumentoPr.setText("Ingrese Documento");
+        txtDocumentoPr.setBorder(null);
+        txtDocumentoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtDocumentoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtDocumentoPr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDocumentoPrMouseClicked(evt);
             }
         });
-        getContentPane().add(jTApellidoPR, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 190, 20));
+        getContentPane().add(txtDocumentoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 120, -1));
 
-        jTdocumentoPR.setBackground(new java.awt.Color(247, 247, 249));
-        jTdocumentoPR.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTdocumentoPR.setForeground(new java.awt.Color(153, 153, 153));
-        jTdocumentoPR.setText("37425968");
-        jTdocumentoPR.setBorder(null);
-        jTdocumentoPR.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTdocumentoPR.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTdocumentoPR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdocumentoPRActionPerformed(evt);
+        txtMatriculaPrestador.setBackground(new java.awt.Color(247, 247, 249));
+        txtMatriculaPrestador.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtMatriculaPrestador.setForeground(new java.awt.Color(51, 51, 51));
+        txtMatriculaPrestador.setText("Ingrese Matricula");
+        txtMatriculaPrestador.setBorder(null);
+        txtMatriculaPrestador.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtMatriculaPrestador.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtMatriculaPrestador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtMatriculaPrestadorMouseClicked(evt);
             }
         });
-        getContentPane().add(jTdocumentoPR, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 150, 20));
-
-        jBuscarporNroAfiliado1.setBackground(new java.awt.Color(255, 255, 255));
-        jBuscarporNroAfiliado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
-        jBuscarporNroAfiliado1.setBorder(null);
-        jBuscarporNroAfiliado1.setBorderPainted(false);
-        jBuscarporNroAfiliado1.setContentAreaFilled(false);
-        jBuscarporNroAfiliado1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
-        jBuscarporNroAfiliado1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
-        getContentPane().add(jBuscarporNroAfiliado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 30, 30));
-
-        jBuscarAfiliadoDNI1.setBackground(new java.awt.Color(255, 255, 255));
-        jBuscarAfiliadoDNI1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
-        jBuscarAfiliadoDNI1.setBorder(null);
-        jBuscarAfiliadoDNI1.setBorderPainted(false);
-        jBuscarAfiliadoDNI1.setContentAreaFilled(false);
-        jBuscarAfiliadoDNI1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
-        jBuscarAfiliadoDNI1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
-        jBuscarAfiliadoDNI1.addActionListener(new java.awt.event.ActionListener() {
+        txtMatriculaPrestador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBuscarAfiliadoDNI1ActionPerformed(evt);
+                txtMatriculaPrestadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jBuscarAfiliadoDNI1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 30, 30));
+        getContentPane().add(txtMatriculaPrestador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 120, -1));
 
-        jBeditarPrestador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Beditar-01.png"))); // NOI18N
-        jBeditarPrestador.setBorder(null);
-        jBeditarPrestador.setContentAreaFilled(false);
-        jBeditarPrestador.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
-        jBeditarPrestador.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
-        getContentPane().add(jBeditarPrestador, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 70, 30));
-
-        jBeditarAfiliado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Beditar-01.png"))); // NOI18N
-        jBeditarAfiliado.setBorder(null);
-        jBeditarAfiliado.setContentAreaFilled(false);
-        jBeditarAfiliado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
-        jBeditarAfiliado.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
-        getContentPane().add(jBeditarAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 70, 30));
-
-        jTestadoAF1.setBackground(new java.awt.Color(247, 247, 249));
-        jTestadoAF1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTestadoAF1.setForeground(new java.awt.Color(153, 153, 153));
-        jTestadoAF1.setText("Activo");
-        jTestadoAF1.setBorder(null);
-        jTestadoAF1.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTestadoAF1.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTestadoAF1.addActionListener(new java.awt.event.ActionListener() {
+        txtMatriculaPr.setEditable(false);
+        txtMatriculaPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtMatriculaPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtMatriculaPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtMatriculaPr.setText("1");
+        txtMatriculaPr.setBorder(null);
+        txtMatriculaPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtMatriculaPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtMatriculaPr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTestadoAF1ActionPerformed(evt);
+                txtMatriculaPrActionPerformed(evt);
             }
         });
-        getContentPane().add(jTestadoAF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 100, 20));
+        getContentPane().add(txtMatriculaPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 490, 140, 20));
 
-        jTplanAF1.setBackground(new java.awt.Color(247, 247, 249));
-        jTplanAF1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTplanAF1.setForeground(new java.awt.Color(153, 153, 153));
-        jTplanAF1.setText("Mas Joven");
-        jTplanAF1.setBorder(null);
-        jTplanAF1.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTplanAF1.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTplanAF1.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefonoPr.setEditable(false);
+        txtTelefonoPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtTelefonoPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtTelefonoPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtTelefonoPr.setText("2392 689523");
+        txtTelefonoPr.setBorder(null);
+        txtTelefonoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtTelefonoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtTelefonoPr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTplanAF1ActionPerformed(evt);
+                txtTelefonoPrActionPerformed(evt);
             }
         });
-        getContentPane().add(jTplanAF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 100, 20));
+        getContentPane().add(txtTelefonoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 140, 20));
 
-        jTdocumentoAF1.setBackground(new java.awt.Color(247, 247, 249));
-        jTdocumentoAF1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        jTdocumentoAF1.setForeground(new java.awt.Color(153, 153, 153));
-        jTdocumentoAF1.setText("37425968");
-        jTdocumentoAF1.setBorder(null);
-        jTdocumentoAF1.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        jTdocumentoAF1.setSelectionColor(new java.awt.Color(153, 153, 153));
-        jTdocumentoAF1.addActionListener(new java.awt.event.ActionListener() {
+        txtDomicilioPr.setEditable(false);
+        txtDomicilioPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtDomicilioPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtDomicilioPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtDomicilioPr.setText("Lisandro de la Torre, Nro 2046 , TL, Bs As.");
+        txtDomicilioPr.setBorder(null);
+        txtDomicilioPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtDomicilioPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtDomicilioPr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdocumentoAF1ActionPerformed(evt);
+                txtDomicilioPrActionPerformed(evt);
             }
         });
-        getContentPane().add(jTdocumentoAF1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 150, 20));
+        getContentPane().add(txtDomicilioPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 240, 20));
 
-        jBguardarcambiosAfiliado.setText("guardar");
-        jBguardarcambiosAfiliado.setBorder(null);
-        jBguardarcambiosAfiliado.setContentAreaFilled(false);
-        getContentPane().add(jBguardarcambiosAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 50, -1));
+        txtNombrePr.setEditable(false);
+        txtNombrePr.setBackground(new java.awt.Color(247, 247, 249));
+        txtNombrePr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtNombrePr.setForeground(new java.awt.Color(153, 153, 153));
+        txtNombrePr.setText("Juan");
+        txtNombrePr.setBorder(null);
+        txtNombrePr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtNombrePr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtNombrePr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombrePrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNombrePr, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, 140, 20));
 
-        jBguardarcambiosPrestador.setText("guardar");
-        jBguardarcambiosPrestador.setBorder(null);
-        jBguardarcambiosPrestador.setContentAreaFilled(false);
-        getContentPane().add(jBguardarcambiosPrestador, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, 50, -1));
+        txtApellidoPr.setEditable(false);
+        txtApellidoPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtApellidoPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtApellidoPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtApellidoPr.setText("Perez");
+        txtApellidoPr.setBorder(null);
+        txtApellidoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtApellidoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtApellidoPr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtApellidoPrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtApellidoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 190, 20));
+
+        txtDniPr.setEditable(false);
+        txtDniPr.setBackground(new java.awt.Color(247, 247, 249));
+        txtDniPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtDniPr.setForeground(new java.awt.Color(153, 153, 153));
+        txtDniPr.setText("37425968");
+        txtDniPr.setBorder(null);
+        txtDniPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtDniPr.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtDniPr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniPrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtDniPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 150, 20));
+
+        btnBuscarAfDni.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarAfDni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
+        btnBuscarAfDni.setBorder(null);
+        btnBuscarAfDni.setBorderPainted(false);
+        btnBuscarAfDni.setContentAreaFilled(false);
+        btnBuscarAfDni.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
+        btnBuscarAfDni.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
+        btnBuscarAfDni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarAfDniActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscarAfDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 30, 30));
+
+        btnBuscarAfId.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarAfId.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
+        btnBuscarAfId.setBorder(null);
+        btnBuscarAfId.setBorderPainted(false);
+        btnBuscarAfId.setContentAreaFilled(false);
+        btnBuscarAfId.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01_1.png"))); // NOI18N
+        btnBuscarAfId.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaIN-01.png"))); // NOI18N
+        btnBuscarAfId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarAfIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnBuscarAfId, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 30, 30));
+
+        btnEditarPr.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Beditar-01.png"))); // NOI18N
+        btnEditarPr.setBorder(null);
+        btnEditarPr.setContentAreaFilled(false);
+        btnEditarPr.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
+        btnEditarPr.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
+        btnEditarPr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPrActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEditarPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 70, 30));
+
+        btnEditarAf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Beditar-01.png"))); // NOI18N
+        btnEditarAf.setBorder(null);
+        btnEditarAf.setContentAreaFilled(false);
+        btnEditarAf.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
+        btnEditarAf.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BEditarIN-01.png"))); // NOI18N
+        btnEditarAf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEditarAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 70, 30));
+
+        txtActivoAf.setEditable(false);
+        txtActivoAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtActivoAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtActivoAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtActivoAf.setText("Activo");
+        txtActivoAf.setBorder(null);
+        txtActivoAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtActivoAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtActivoAf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtActivoAfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtActivoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 100, 20));
+
+        txtPlanAf.setEditable(false);
+        txtPlanAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtPlanAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtPlanAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtPlanAf.setText("Mas Joven");
+        txtPlanAf.setBorder(null);
+        txtPlanAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtPlanAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtPlanAf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPlanAfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtPlanAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 100, 20));
+
+        txtDniAf.setEditable(false);
+        txtDniAf.setBackground(new java.awt.Color(247, 247, 249));
+        txtDniAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtDniAf.setForeground(new java.awt.Color(153, 153, 153));
+        txtDniAf.setText("37425968");
+        txtDniAf.setBorder(null);
+        txtDniAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtDniAf.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtDniAf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDniAfActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtDniAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 200, 150, 20));
+
+        btnGuardadAf.setText("guardar");
+        btnGuardadAf.setBorder(null);
+        btnGuardadAf.setContentAreaFilled(false);
+        getContentPane().add(btnGuardadAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 150, 50, -1));
+
+        btnGuardarPr.setText("guardar");
+        btnGuardarPr.setBorder(null);
+        btnGuardarPr.setContentAreaFilled(false);
+        getContentPane().add(btnGuardarPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, 50, -1));
+
+        txtEspecialidad.setEditable(false);
+        txtEspecialidad.setBackground(new java.awt.Color(247, 247, 249));
+        txtEspecialidad.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
+        txtEspecialidad.setForeground(new java.awt.Color(153, 153, 153));
+        txtEspecialidad.setText("Cardiologia");
+        txtEspecialidad.setBorder(null);
+        txtEspecialidad.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtEspecialidad.setSelectionColor(new java.awt.Color(153, 153, 153));
+        txtEspecialidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEspecialidadActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 100, 20));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/CONSULTAvista-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));
@@ -398,130 +478,323 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTNombreAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombreAFActionPerformed
+    private void txtNombreAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreAfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTNombreAFActionPerformed
+    }//GEN-LAST:event_txtNombreAfActionPerformed
 
-    private void jTdomicilioAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdomicilioAFActionPerformed
+    private void txtDomicilioAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioAfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTdomicilioAFActionPerformed
+    }//GEN-LAST:event_txtDomicilioAfActionPerformed
 
-    private void jTtelefonoAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefonoAFActionPerformed
+    private void txtTelefonoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoAfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTtelefonoAFActionPerformed
+    }//GEN-LAST:event_txtTelefonoAfActionPerformed
 
-    private void jTestadoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestadoPrActionPerformed
+    private void txtActivoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActivoPrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTestadoPrActionPerformed
+    }//GEN-LAST:event_txtActivoPrActionPerformed
 
-    private void jTApellidoAFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTApellidoAFActionPerformed
+    private void txtApellidoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoAfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTApellidoAFActionPerformed
+    }//GEN-LAST:event_txtApellidoAfActionPerformed
 
-    private void jTIdAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTIdAfiliadoActionPerformed
+    private void txtIdAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdAfiliadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTIdAfiliadoActionPerformed
+    }//GEN-LAST:event_txtIdAfiliadoActionPerformed
 
-    private void jBuscarPrestadorMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarPrestadorMatriculaActionPerformed
+    private void btnBuscarPrIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPrIdActionPerformed
         try {
-            int dni = Integer.parseInt(jTdocumento.getText());
+            int matricula = Integer.parseInt(txtMatriculaPrestador.getText());
+
+            Prestador prestador = new Prestador();
+            prestador = presData.buscarPrestador(matricula);
+
+            if (prestador != null) {
+                txtMatriculaPr.setText(String.valueOf(prestador.getIdPrestador()));
+                txtNombrePr.setText(prestador.getNombre());
+                txtApellidoPr.setText(prestador.getApellido());
+                txtDomicilioPr.setText(prestador.getDomicilio());
+                txtDniPr.setText(String.valueOf(prestador.getDni()));
+                txtTelefonoPr.setText(String.valueOf(prestador.getTelefono()));
+                txtEspecialidad.setText(prestador.getEspecialidad().getEspecialidad());
+                if (prestador.isActivo()) {
+                    txtActivoPr.setText("Activo");
+                } else {
+                    txtActivoPr.setText("Inactivo");
+                }
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese una matricula");
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "Error en: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnBuscarPrIdActionPerformed
+
+    private void txtMatriculaPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatriculaPrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMatriculaPrActionPerformed
+
+    private void txtTelefonoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoPrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoPrActionPerformed
+
+    private void txtDomicilioPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomicilioPrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDomicilioPrActionPerformed
+
+    private void txtNombrePrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombrePrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombrePrActionPerformed
+
+    private void txtApellidoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoPrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtApellidoPrActionPerformed
+
+    private void txtDniPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniPrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniPrActionPerformed
+
+    private void txtMatriculaPrestadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMatriculaPrestadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMatriculaPrestadorActionPerformed
+
+    private void btnBuscarAfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAfIdActionPerformed
+        try {
+            int idAfiliado = Integer.parseInt(txtAfiliadoId.getText());
+
+            Afiliado afiliado = new Afiliado();
+            afiliado = afilData.buscarAfiliado(idAfiliado);
+
+            if (afiliado != null) {
+                txtIdAfiliado.setText(String.valueOf(afiliado.getIdAfiliado()));
+                txtNombreAf.setText(afiliado.getNombre());
+                txtApellidoAf.setText(afiliado.getApellido());
+                txtDomicilioAf.setText(afiliado.getDomicilio());
+                txtDniAf.setText(String.valueOf(afiliado.getDni()));
+                txtTelefonoAf.setText(String.valueOf(afiliado.getTelefono()));
+                txtPlanAf.setText(afiliado.getPlan().getTipoDePlan());
+                if (afiliado.isActivo()) {
+                    txtActivoAf.setText("Activo");
+                } else {
+                    txtActivoAf.setText("Inactivo");
+                }
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese el numero del afiliado");
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "Error en: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnBuscarAfIdActionPerformed
+
+    private void txtDniAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniAfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniAfActionPerformed
+
+    private void txtPlanAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlanAfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPlanAfActionPerformed
+
+    private void txtActivoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActivoAfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtActivoAfActionPerformed
+
+    private void btnBuscarAfDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAfDniActionPerformed
+        try {
+            int dni = Integer.parseInt(txtAfiliadoDni.getText());
 
             Afiliado afiliado = new Afiliado();
             afiliado = afilData.buscarAfiliadoPorDni(dni);
 
             if (afiliado != null) {
-                jTNombreAF.setText(afiliado.getNombre());
-                jTApellidoAF.setText(afiliado.getApellido());
-                jTdomicilioAF.setText(afiliado.getDomicilio());
-                jTtelefonoAF.setText(String.valueOf(afiliado.getTelefono()));
-//                if(afiliado.isActivo()){
-//                    ImageIcon nuevaImagen = new ImageIcon(getClass().getResource("/img/ButtonActivo-01.png"));
-//                    jBactivo.setIcon(nuevaImagen);
-//                }else{
-//                    ImageIcon nuevaImagen = new ImageIcon(getClass().getResource("/img/ButtonInactivo-01.png"));
-//                    jBactivo.setIcon(nuevaImagen);
-//                }
+                txtIdAfiliado.setText(String.valueOf(afiliado.getIdAfiliado()));
+                txtNombreAf.setText(afiliado.getNombre());
+                txtApellidoAf.setText(afiliado.getApellido());
+                txtDniAf.setText(String.valueOf(afiliado.getDni()));
+                txtDomicilioAf.setText(afiliado.getDomicilio());
+                txtTelefonoAf.setText(String.valueOf(afiliado.getTelefono()));
+                txtPlanAf.setText(afiliado.getPlan().getTipoDePlan());
+                if (afiliado.isActivo()) {
+                    txtActivoAf.setText("Activo");
+                } else {
+                    txtActivoAf.setText("Inactivo");
+                }
+//              
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese un numero de Documento");
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(this, "Error en: " + e.getMessage());
         }
-    }//GEN-LAST:event_jBuscarPrestadorMatriculaActionPerformed
+    }//GEN-LAST:event_btnBuscarAfDniActionPerformed
 
-    private void jTMatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTMatriculaActionPerformed
+    private void txtEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecialidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTMatriculaActionPerformed
+    }//GEN-LAST:event_txtEspecialidadActionPerformed
 
-    private void jTtelefonoPRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefonoPRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTtelefonoPRActionPerformed
+    private void btnBuscarPrDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPrDniActionPerformed
+        try {
+            int dni = Integer.parseInt(txtDocumentoPr.getText());
 
-    private void jTdomicilioPRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdomicilioPRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdomicilioPRActionPerformed
+            Prestador prestador = new Prestador();
+            prestador = presData.buscarPrestadorPorDni(dni);
 
-    private void jTNombrePRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombrePRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTNombrePRActionPerformed
+            if (prestador != null) {
+                txtMatriculaPr.setText(String.valueOf(prestador.getIdPrestador()));
+                txtNombrePr.setText(prestador.getNombre());
+                txtApellidoPr.setText(prestador.getApellido());
+                txtDomicilioPr.setText(prestador.getDomicilio());
+                txtDniPr.setText(String.valueOf(prestador.getDni()));
+                txtTelefonoPr.setText(String.valueOf(prestador.getTelefono()));
+                txtEspecialidad.setText(prestador.getEspecialidad().getEspecialidad());
+                if (prestador.isActivo()) {
+                    txtActivoPr.setText("Activo");
+                } else {
+                    txtActivoPr.setText("Inactivo");
+                }
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese un numero de Documento");
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(this, "Error en: " + e.getMessage());
+        }
+    }//GEN-LAST:event_btnBuscarPrDniActionPerformed
 
-    private void jTApellidoPRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTApellidoPRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTApellidoPRActionPerformed
+    private void txtAfiliadoIdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAfiliadoIdMouseClicked
+        if (txtAfiliadoId.getText().equals("Ingrese ID Afiliado")) {
 
-    private void jTdocumentoPRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdocumentoPRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdocumentoPRActionPerformed
+            txtAfiliadoId.setText("");
+            txtAfiliadoId.setForeground(Color.black);
+        }
+        if (txtAfiliadoDni.getText().isEmpty()) {
+            txtAfiliadoDni.setText("Ingrese Nro DNI");
+            txtAfiliadoDni.setForeground(Color.gray);
+        }
+        
+    }//GEN-LAST:event_txtAfiliadoIdMouseClicked
 
-    private void jTmatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTmatriculaActionPerformed
+    private void txtAfiliadoIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfiliadoIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTmatriculaActionPerformed
+    }//GEN-LAST:event_txtAfiliadoIdActionPerformed
 
-    private void jBuscarAfiliadoDNI1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarAfiliadoDNI1ActionPerformed
+    private void txtAfiliadoDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAfiliadoDniActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBuscarAfiliadoDNI1ActionPerformed
+    }//GEN-LAST:event_txtAfiliadoDniActionPerformed
 
-    private void jTdocumentoAF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdocumentoAF1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdocumentoAF1ActionPerformed
+    private void txtAfiliadoDniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAfiliadoDniMouseClicked
+        if (txtAfiliadoDni.getText().equals("Ingrese el Documento")) {
 
-    private void jTplanAF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTplanAF1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTplanAF1ActionPerformed
+            txtAfiliadoDni.setText("");
+            txtAfiliadoDni.setForeground(Color.black);
+        }
+        if (txtAfiliadoId.getText().isEmpty()) {
+            txtAfiliadoId.setText("Ingrese ID Afiliado");
+            txtAfiliadoId.setForeground(Color.gray);
+        }
+        if (txtMatriculaPrestador.getText().isEmpty()) {
+            txtMatriculaPrestador.setText("Ingrese Matricula");
+            txtMatriculaPrestador.setForeground(Color.gray);
+        }
+        if (txtDocumentoPr.getText().isEmpty()) {
+            txtDocumentoPr.setText("Ingrese el Documento");
+            txtDocumentoPr.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtAfiliadoDniMouseClicked
 
-    private void jTestadoAF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTestadoAF1ActionPerformed
+    private void txtMatriculaPrestadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMatriculaPrestadorMouseClicked
+        if (txtMatriculaPrestador.getText().equals("Ingrese Matricula")) {
+            txtMatriculaPrestador.setText("");
+            txtMatriculaPrestador.setForeground(Color.black);
+        }
+        if (txtDocumentoPr.getText().isEmpty()) {
+            txtDocumentoPr.setText("Ingrese el Documento");
+            txtDocumentoPr.setForeground(Color.gray);
+        }
+        if (txtAfiliadoId.getText().isEmpty()) {
+            txtAfiliadoId.setText("Ingrese ID Afiliado");
+            txtAfiliadoId.setForeground(Color.gray);
+        }
+        if (txtAfiliadoDni.getText().isEmpty()) {
+            txtAfiliadoDni.setText("Ingrese el Documento");
+            txtAfiliadoDni.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtMatriculaPrestadorMouseClicked
+
+    private void txtDocumentoPrMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDocumentoPrMouseClicked
+        if (txtDocumentoPr.getText().equals("Ingrese el Documento")) {
+
+            txtDocumentoPr.setText("");
+            txtDocumentoPr.setForeground(Color.black);
+        }
+        if (txtMatriculaPrestador.getText().isEmpty()) {
+            txtMatriculaPrestador.setText("Ingrese Matricula");
+            txtMatriculaPrestador.setForeground(Color.gray);
+        }
+        if (txtAfiliadoId.getText().isEmpty()) {
+            txtAfiliadoId.setText("Ingrese ID Afiliado");
+            txtAfiliadoId.setForeground(Color.gray);
+        }
+        if (txtAfiliadoDni.getText().isEmpty()) {
+            txtAfiliadoDni.setText("Ingrese el Documento");
+            txtAfiliadoDni.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtDocumentoPrMouseClicked
+
+    private void btnEditarAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAfActionPerformed
+        btnGuardadAf.setVisible(true);
+        btnEditarAf.setVisible(false);
+        txtIdAfiliado.setEditable(true);
+        txtNombreAf.setEditable(true);
+        txtApellidoAf.setEditable(true);
+        txtDniAf.setEditable(true);
+        txtTelefonoAf.setEditable(true);
+        txtDomicilioAf.setEditable(true);
+        txtActivoAf.setEditable(true);
+        
+    }//GEN-LAST:event_btnEditarAfActionPerformed
+
+    private void btnEditarPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPrActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTestadoAF1ActionPerformed
+        btnGuardarPr.setVisible(true);
+        btnEditarPr.setVisible(false);
+        txtMatriculaPr.setEditable(true);
+        txtNombrePr.setEditable(true);
+        txtApellidoPr.setEditable(true);
+        txtDniPr.setEditable(true);
+        txtDomicilioPr.setEditable(true);
+        txtEspecialidad.setEditable(true);
+        txtActivoPr.setEditable(true);
+    }//GEN-LAST:event_btnEditarPrActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FONDO;
-    private javax.swing.JButton jBeditarAfiliado;
-    private javax.swing.JButton jBeditarPrestador;
-    private javax.swing.JButton jBguardarcambiosAfiliado;
-    private javax.swing.JButton jBguardarcambiosPrestador;
-    private javax.swing.JButton jBuscarAfiliadoDNI1;
-    private javax.swing.JButton jBuscarDniPrestador;
-    private javax.swing.JButton jBuscarPrestadorMatricula;
-    private javax.swing.JButton jBuscarporNroAfiliado1;
-    private javax.swing.JTextField jTApellidoAF;
-    private javax.swing.JTextField jTApellidoPR;
-    private javax.swing.JTextField jTIdAfiliado;
-    private javax.swing.JTextField jTMatricula;
-    private javax.swing.JTextField jTNombreAF;
-    private javax.swing.JTextField jTNombrePR;
-    private javax.swing.JTextField jTbuscarDNIprestador;
-    private javax.swing.JTextField jTdocumento;
-    private javax.swing.JTextField jTdocumentoAF1;
-    private javax.swing.JTextField jTdocumentoPR;
-    private javax.swing.JTextField jTdomicilioAF;
-    private javax.swing.JTextField jTdomicilioPR;
-    private javax.swing.JTextField jTestadoAF1;
-    private javax.swing.JTextField jTestadoPr;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTmatricula;
-    private javax.swing.JTextField jTplanAF1;
-    private javax.swing.JTextField jTtelefonoAF;
-    private javax.swing.JTextField jTtelefonoPR;
+    private javax.swing.JButton btnBuscarAfDni;
+    private javax.swing.JButton btnBuscarAfId;
+    private javax.swing.JButton btnBuscarPrDni;
+    private javax.swing.JButton btnBuscarPrId;
+    private javax.swing.JButton btnEditarAf;
+    private javax.swing.JButton btnEditarPr;
+    private javax.swing.JButton btnGuardadAf;
+    private javax.swing.JButton btnGuardarPr;
+    private javax.swing.JTextField txtActivoAf;
+    private javax.swing.JTextField txtActivoPr;
+    private javax.swing.JTextField txtAfiliadoDni;
+    private javax.swing.JTextField txtAfiliadoId;
+    private javax.swing.JTextField txtApellidoAf;
+    private javax.swing.JTextField txtApellidoPr;
+    private javax.swing.JTextField txtDniAf;
+    private javax.swing.JTextField txtDniPr;
+    private javax.swing.JTextField txtDocumentoPr;
+    private javax.swing.JTextField txtDomicilioAf;
+    private javax.swing.JTextField txtDomicilioPr;
+    private javax.swing.JTextField txtEspecialidad;
+    private javax.swing.JTextField txtIdAfiliado;
+    private javax.swing.JTextField txtMatriculaPr;
+    private javax.swing.JTextField txtMatriculaPrestador;
+    private javax.swing.JTextField txtNombreAf;
+    private javax.swing.JTextField txtNombrePr;
+    private javax.swing.JTextField txtPlanAf;
+    private javax.swing.JTextField txtTelefonoAf;
+    private javax.swing.JTextField txtTelefonoPr;
     // End of variables declaration//GEN-END:variables
 }

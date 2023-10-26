@@ -73,6 +73,8 @@ public class AfiliadoData {
                 afiliado.setPlan(planData.buscarPlanPorId(rs.getInt("idPlan")));
                 afiliado.setActivo(rs.getBoolean("activo"));
 
+            } else{
+                JOptionPane.showMessageDialog(null, "No existe el afiliado");
             }
             ps.close();
         } catch (SQLException ex) {
