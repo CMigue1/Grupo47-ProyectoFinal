@@ -387,12 +387,12 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
 
     private void jBlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimpiarActionPerformed
         // TODO add your handling code here:
-        jTNombre.setText("Nombre");
-        jTApellido1.setText("Apellido");
-        jTdocumento.setText("Documento");
+        jTNombre.setText("   Nombre");
+        jTApellido1.setText("  Apellido");
+        jTdocumento.setText("   Nro de Documento");
+        jTtelefono.setText("   Telefono");
+        jTdireccion.setText("   Domicilio");
         jCPlan1.setSelectedIndex(0);
-        jTdireccion.setText("Domicilio");
-        jTtelefono.setText("Telefono");
     }//GEN-LAST:event_jBlimpiarActionPerformed
 
     private void jTApellido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTApellido1MouseClicked
