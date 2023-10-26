@@ -23,6 +23,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  * @author Miguel
  */
 public class VistaConsultas extends javax.swing.JInternalFrame {
+
     private List<Plan> listaP;
     private List<Especialidad> listE;
     private PlanData planData;
@@ -35,7 +36,7 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         initComponents();
         this.principal = principal;
         planData = new PlanData();
-        listaP= planData.listarPlanes();
+        listaP = planData.listarPlanes();
         especialidadData = new EspecialidadData();
         listE = especialidadData.listarEspecialidades();
         afilData = new AfiliadoData();
@@ -58,7 +59,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         txtAfiliadoId = new javax.swing.JTextField();
         txtIdAfiliado = new javax.swing.JTextField();
         txtApellidoAf = new javax.swing.JTextField();
-        txtActivoPr = new javax.swing.JTextField();
         txtTelefonoAf = new javax.swing.JTextField();
         txtDomicilioAf = new javax.swing.JTextField();
         txtNombreAf = new javax.swing.JTextField();
@@ -77,12 +77,13 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         btnBuscarAfId = new javax.swing.JButton();
         btnEditarPr = new javax.swing.JButton();
         btnEditarAf = new javax.swing.JButton();
-        txtActivoAf = new javax.swing.JTextField();
         txtDniAf = new javax.swing.JTextField();
         btnGuardadAf = new javax.swing.JButton();
         btnGuardarPr = new javax.swing.JButton();
         jCPlan1 = new javax.swing.JComboBox<>();
         cbxEspecialidad = new javax.swing.JComboBox<>();
+        cbxEstadoAf = new javax.swing.JComboBox<>();
+        cbxEstadoPr = new javax.swing.JComboBox<>();
         FONDO = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -135,21 +136,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(txtApellidoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 200, 20));
-
-        txtActivoPr.setEditable(false);
-        txtActivoPr.setBackground(new java.awt.Color(247, 247, 249));
-        txtActivoPr.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        txtActivoPr.setForeground(new java.awt.Color(153, 153, 153));
-        txtActivoPr.setText("Activo");
-        txtActivoPr.setBorder(null);
-        txtActivoPr.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        txtActivoPr.setSelectionColor(new java.awt.Color(153, 153, 153));
-        txtActivoPr.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtActivoPrActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtActivoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 100, 20));
 
         txtTelefonoAf.setEditable(false);
         txtTelefonoAf.setBackground(new java.awt.Color(247, 247, 249));
@@ -418,21 +404,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         });
         getContentPane().add(btnEditarAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 70, 30));
 
-        txtActivoAf.setEditable(false);
-        txtActivoAf.setBackground(new java.awt.Color(247, 247, 249));
-        txtActivoAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
-        txtActivoAf.setForeground(new java.awt.Color(153, 153, 153));
-        txtActivoAf.setText("Activo");
-        txtActivoAf.setBorder(null);
-        txtActivoAf.setSelectedTextColor(new java.awt.Color(0, 0, 0));
-        txtActivoAf.setSelectionColor(new java.awt.Color(153, 153, 153));
-        txtActivoAf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtActivoAfActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtActivoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 100, 20));
-
         txtDniAf.setEditable(false);
         txtDniAf.setBackground(new java.awt.Color(247, 247, 249));
         txtDniAf.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
@@ -461,6 +432,11 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         btnGuardarPr.setText("guardar");
         btnGuardarPr.setBorder(null);
         btnGuardarPr.setContentAreaFilled(false);
+        btnGuardarPr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarPrActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGuardarPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 440, 50, -1));
 
         jCPlan1.setBackground(new java.awt.Color(255, 255, 255));
@@ -489,6 +465,14 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         });
         getContentPane().add(cbxEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 110, 20));
 
+        cbxEstadoAf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        cbxEstadoAf.setEnabled(false);
+        getContentPane().add(cbxEstadoAf, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 110, -1));
+
+        cbxEstadoPr.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Inactivo" }));
+        cbxEstadoPr.setEnabled(false);
+        getContentPane().add(cbxEstadoPr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 550, 110, -1));
+
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/CONSULTAvista-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));
 
@@ -506,10 +490,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     private void txtTelefonoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoAfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoAfActionPerformed
-
-    private void txtActivoPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActivoPrActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtActivoPrActionPerformed
 
     private void txtApellidoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoAfActionPerformed
         // TODO add your handling code here:
@@ -533,12 +513,12 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
                 txtDomicilioPr.setText(prestador.getDomicilio());
                 txtDniPr.setText(String.valueOf(prestador.getDni()));
                 txtTelefonoPr.setText(String.valueOf(prestador.getTelefono()));
-                int id = prestador.getEspecialidad().getIdEspecialidad()-1;
+                int id = prestador.getEspecialidad().getIdEspecialidad() - 1;
                 cbxEspecialidad.setSelectedIndex(id);
                 if (prestador.isActivo()) {
-                    txtActivoPr.setText("Activo");
+                    cbxEstadoPr.setSelectedIndex(0);
                 } else {
-                    txtActivoPr.setText("Inactivo");
+                    cbxEstadoPr.setSelectedIndex(1);
                 }
             }
         } catch (NumberFormatException e) {
@@ -590,12 +570,12 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
                 txtDomicilioAf.setText(afiliado.getDomicilio());
                 txtDniAf.setText(String.valueOf(afiliado.getDni()));
                 txtTelefonoAf.setText(String.valueOf(afiliado.getTelefono()));
-                int id = afiliado.getPlan().getIdPlan()-1;
+                int id = afiliado.getPlan().getIdPlan() - 1;
                 jCPlan1.setSelectedIndex(id);
                 if (afiliado.isActivo()) {
-                    txtActivoAf.setText("Activo");
+                    cbxEstadoAf.setSelectedIndex(0);
                 } else {
-                    txtActivoAf.setText("Inactivo");
+                    cbxEstadoAf.setSelectedIndex(1);
                 }
             }
         } catch (NumberFormatException e) {
@@ -609,17 +589,13 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDniAfActionPerformed
 
-    private void txtActivoAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActivoAfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtActivoAfActionPerformed
-
     private void btnBuscarAfDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarAfDniActionPerformed
         try {
             int dni = Integer.parseInt(txtAfiliadoDni.getText());
 
             Afiliado afiliado = new Afiliado();
             afiliado = afilData.buscarAfiliadoPorDni(dni);
-            
+
             if (afiliado != null) {
                 txtIdAfiliado.setText(String.valueOf(afiliado.getIdAfiliado()));
                 txtNombreAf.setText(afiliado.getNombre());
@@ -627,13 +603,13 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
                 txtDniAf.setText(String.valueOf(afiliado.getDni()));
                 txtDomicilioAf.setText(afiliado.getDomicilio());
                 txtTelefonoAf.setText(String.valueOf(afiliado.getTelefono()));
-                int id = afiliado.getPlan().getIdPlan()-1;
+                int id = afiliado.getPlan().getIdPlan() - 1;
                 jCPlan1.setSelectedIndex(id);
-                
+
                 if (afiliado.isActivo()) {
-                    txtActivoAf.setText("Activo");
+                    cbxEstadoAf.setSelectedIndex(0);
                 } else {
-                    txtActivoAf.setText("Inactivo");
+                    cbxEstadoAf.setSelectedIndex(1);
                 }
 //              
             }
@@ -658,12 +634,12 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
                 txtDomicilioPr.setText(prestador.getDomicilio());
                 txtDniPr.setText(String.valueOf(prestador.getDni()));
                 txtTelefonoPr.setText(String.valueOf(prestador.getTelefono()));
-                int id = prestador.getEspecialidad().getIdEspecialidad()-1;
+                int id = prestador.getEspecialidad().getIdEspecialidad() - 1;
                 cbxEspecialidad.setSelectedIndex(id);
                 if (prestador.isActivo()) {
-                    txtActivoPr.setText("Activo");
+                    cbxEstadoPr.setSelectedIndex(0);
                 } else {
-                    txtActivoPr.setText("Inactivo");
+                    cbxEstadoPr.setSelectedIndex(1);
                 }
             }
         } catch (NumberFormatException e) {
@@ -769,7 +745,7 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         txtTelefonoAf.setEditable(true);
         txtDomicilioAf.setEditable(true);
         jCPlan1.setEnabled(true);
-        txtActivoAf.setEditable(true);
+        cbxEstadoAf.setEnabled(true);
 
     }//GEN-LAST:event_btnEditarAfActionPerformed
 
@@ -783,30 +759,47 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         txtDniPr.setEditable(true);
         txtDomicilioPr.setEditable(true);
         cbxEspecialidad.setEnabled(true);
-        txtActivoPr.setEditable(true);
+        cbxEstadoPr.setEnabled(true);
     }//GEN-LAST:event_btnEditarPrActionPerformed
 
     private void btnGuardadAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardadAfActionPerformed
-//        try {
-//            int idAfiliado = validarEntero(txtIdAfiliado.getText().trim());
-//            String nombre = txtNombreAf.getText().trim();
-//            String apellido = txtApellidoAf.getText().trim();
-//            int dni = validarEntero(txtDniAf.getText().trim());
-//            String domicilio = txtDomicilioAf.getText().trim();
-//            int telefono = validarEntero(txtTelefonoAf.getText().trim());
-//            
-//            String plan = (Plan) jCPlan1.getSelectedItem();
-//            if (jTdocumento.getText().isEmpty() || jTNombre.getText().isEmpty() || jTApellido1.getText().isEmpty() || jTdireccion.getText().isEmpty() || jTtelefono.getText().isEmpty()) {
-//                JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
-//                return;
-//            }
-//            Afiliado afiliado = new Afiliado(nombre, apellido, domicilio, dni, telefono, plan, true);
-//            afilData.altaAfilidado(afiliado);
-//
-//        } catch (NumberFormatException e) {
-//            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
-//        }
-//
+        btnEditarAf.setVisible(true);
+        btnGuardadAf.setVisible(false);
+        try {
+            boolean estado = false;
+            int idAfiliado = validarEntero(txtIdAfiliado.getText().trim());
+            String nombre = txtNombreAf.getText().trim();
+            String apellido = txtApellidoAf.getText().trim();
+            int dni = validarEntero(txtDniAf.getText().trim());
+            String domicilio = txtDomicilioAf.getText().trim();
+            int telefono = validarEntero(txtTelefonoAf.getText().trim());
+
+            Plan plan = (Plan) jCPlan1.getSelectedItem();
+            if (txtIdAfiliado.getText().isEmpty() || txtDniAf.getText().isEmpty() || txtNombreAf.getText().isEmpty() || txtApellidoAf.getText().isEmpty() || txtDomicilioAf.getText().isEmpty() || txtTelefonoAf.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
+                return;
+            }
+            String activo = String.valueOf(cbxEstadoAf.getSelectedItem());
+            if ("Activo".equalsIgnoreCase(activo)) {
+                estado = true;
+            } else {
+                estado = false;
+            }
+            Afiliado afiliado = new Afiliado(idAfiliado, nombre, apellido, domicilio, dni, telefono, plan, estado);
+            afilData.modificarAfiliado(afiliado);
+            txtIdAfiliado.setEditable(false);
+            txtNombreAf.setEditable(false);
+            txtApellidoAf.setEditable(false);
+            txtDniAf.setEditable(false);
+            txtTelefonoAf.setEditable(false);
+            txtDomicilioAf.setEditable(false);
+            jCPlan1.setEnabled(false);
+            cbxEstadoAf.setEnabled(false);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_btnGuardadAfActionPerformed
 
     private void jCPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCPlan1ActionPerformed
@@ -817,6 +810,44 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     private void cbxEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEspecialidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxEspecialidadActionPerformed
+
+    private void btnGuardarPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPrActionPerformed
+        btnEditarPr.setVisible(true);
+        btnGuardarPr.setVisible(false);
+        try {
+            boolean estado = false;
+            int idPrestador = validarEntero(txtMatriculaPr.getText().trim());
+            String nombre = txtNombrePr.getText().trim();
+            String apellido = txtApellidoPr.getText().trim();
+            int dni = validarEntero(txtDniPr.getText().trim());
+            String domicilio = txtDomicilioPr.getText().trim();
+            int telefono = validarEntero(txtTelefonoPr.getText().trim());
+
+            Especialidad especialidad = (Especialidad) cbxEspecialidad.getSelectedItem();
+            if (txtIdAfiliado.getText().isEmpty() || txtDniAf.getText().isEmpty() || txtNombreAf.getText().isEmpty() || txtApellidoAf.getText().isEmpty() || txtDomicilioAf.getText().isEmpty() || txtTelefonoAf.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
+                return;
+            }
+            String activo = String.valueOf(cbxEstadoAf.getSelectedItem());
+            if ("Activo".equalsIgnoreCase(activo)) {
+                estado = true;
+            } else {
+                estado = false;
+            }
+            Prestador prestador = new Prestador(idPrestador, nombre, apellido, domicilio, dni, telefono, especialidad, estado);
+            presData.modificarPrestador(prestador);
+            txtMatriculaPr.setEditable(false);
+            txtNombrePr.setEditable(false);
+            txtApellidoPr.setEditable(false);
+            txtDniPr.setEditable(false);
+            txtDomicilioPr.setEditable(false);
+            cbxEspecialidad.setEnabled(false);
+            cbxEstadoPr.setEnabled(false);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnGuardarPrActionPerformed
     public int validarEntero(String texto) throws NumberFormatException {
         if (texto.matches("^-?\\d+$")) {
             return Integer.parseInt(texto);
@@ -824,11 +855,13 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             throw new NumberFormatException();
         }
     }
+
     private void cargarPlanes(JComboBox comboBox) {
         for (Plan planes : listaP) {
             comboBox.addItem(planes);
         }
     }
+
     private void cargarEspecialidades(JComboBox comboBox) {
         for (Especialidad especialidad : listE) {
             comboBox.addItem(especialidad);
@@ -846,9 +879,9 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnGuardadAf;
     private javax.swing.JButton btnGuardarPr;
     private javax.swing.JComboBox<Especialidad> cbxEspecialidad;
+    private javax.swing.JComboBox<String> cbxEstadoAf;
+    private javax.swing.JComboBox<String> cbxEstadoPr;
     private javax.swing.JComboBox<Plan> jCPlan1;
-    private javax.swing.JTextField txtActivoAf;
-    private javax.swing.JTextField txtActivoPr;
     private javax.swing.JTextField txtAfiliadoDni;
     private javax.swing.JTextField txtAfiliadoId;
     private javax.swing.JTextField txtApellidoAf;
