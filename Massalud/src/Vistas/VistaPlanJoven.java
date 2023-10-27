@@ -129,10 +129,10 @@ public class VistaPlanJoven extends javax.swing.JInternalFrame {
                 jBSiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 660, 30, 20));
+        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 660, 40, 20));
 
-        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/2-01.png"))); // NOI18N
-        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
+        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/1-01.png"))); // NOI18N
+        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/vistaJOVEN-01.png"))); // NOI18N
         FONDO.setMaximumSize(new java.awt.Dimension(1060, 720));

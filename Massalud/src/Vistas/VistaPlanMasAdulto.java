@@ -114,7 +114,7 @@ public class VistaPlanMasAdulto extends javax.swing.JInternalFrame {
                 jBsiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jBsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 20, 20));
+        getContentPane().add(jBsiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 660, 30, 20));
 
         jBAnterior.setBorder(null);
         jBAnterior.setContentAreaFilled(false);
@@ -123,10 +123,10 @@ public class VistaPlanMasAdulto extends javax.swing.JInternalFrame {
                 jBAnteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, 20, 20));
+        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 660, 40, 20));
 
-        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/2-01.png"))); // NOI18N
-        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
+        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/3-01.png"))); // NOI18N
+        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/vistaADULTOS-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));

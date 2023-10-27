@@ -121,10 +121,10 @@ public class VistaPlanPlatinum extends javax.swing.JInternalFrame {
                 jBAnteriorActionPerformed(evt);
             }
         });
-        jPanel1.add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 660, 40, 20));
+        jPanel1.add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 660, 90, 20));
 
-        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/2-01.png"))); // NOI18N
-        jPanel1.add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
+        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/5-01.png"))); // NOI18N
+        jPanel1.add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/vistaPLATINUM-01.png"))); // NOI18N
         jPanel1.add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));

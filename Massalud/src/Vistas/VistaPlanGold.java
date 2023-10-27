@@ -121,7 +121,7 @@ public class VistaPlanGold extends javax.swing.JInternalFrame {
                 jBSiguienteActionPerformed(evt);
             }
         });
-        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 660, 30, 20));
+        getContentPane().add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 660, 20, 20));
 
         jBAnterior.setBorder(null);
         jBAnterior.setContentAreaFilled(false);
@@ -130,10 +130,10 @@ public class VistaPlanGold extends javax.swing.JInternalFrame {
                 jBAnteriorActionPerformed(evt);
             }
         });
-        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 660, 30, 20));
+        getContentPane().add(jBAnterior, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 660, 60, 20));
 
-        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/2-01.png"))); // NOI18N
-        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 650, -1, -1));
+        imgbotonsig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/4-01.png"))); // NOI18N
+        getContentPane().add(imgbotonsig, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 650, -1, -1));
 
         FONDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/vistaGOLD-01.png"))); // NOI18N
         getContentPane().add(FONDO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 720));
