@@ -5,12 +5,11 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
 
-
 public class VistaOrden extends javax.swing.JInternalFrame {
     
      private DefaultTableModel modelo = new DefaultTableModel();
 
-    private Principal principal= new Principal ();
+    private Principal principal;
     public VistaOrden(Principal principal) {
         
         initComponents();
@@ -42,7 +41,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLfondoVista = new javax.swing.JLabel();
-        jLventanaEmergente = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(1062, 720));
@@ -210,9 +208,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jLfondoVista.setRequestFocusEnabled(false);
         getContentPane().add(jLfondoVista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1062, 720));
 
-        jLventanaEmergente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/VENTANAemergente-01.png"))); // NOI18N
-        getContentPane().add(jLventanaEmergente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 90));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -245,8 +240,7 @@ public class VistaOrden extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBbuscarporFechaActionPerformed
 
     private void jBbuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscar1ActionPerformed
-       VentanaEmergente desgloce = new VentanaEmergente(principal);
-        principal.agregarComponenteAlEscritorio(desgloce);
+        // TODO add your handling code here:
     }//GEN-LAST:event_jBbuscar1ActionPerformed
 
 
@@ -260,7 +254,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLfondoVista;
-    private javax.swing.JLabel jLventanaEmergente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTAfiliado;
     private javax.swing.JTextField jTImporte;
