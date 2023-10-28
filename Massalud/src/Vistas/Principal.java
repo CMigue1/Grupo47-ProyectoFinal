@@ -1,3 +1,4 @@
+
 package Vistas;
 
 import javax.swing.JInternalFrame;
@@ -5,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class Principal extends javax.swing.JFrame {
 
@@ -15,8 +17,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         establecerFondoEscritorio();
-        
-        //deshabilitarBotones();
+
         // ... Resto del código ...
 
         // Cargar la imagen para el clic del botón
@@ -36,7 +37,10 @@ public class Principal extends javax.swing.JFrame {
 ////         jBPrestadores.setIcon(nuevaImagen);
 //        }
 //    });
-    }
+}
+  
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -298,7 +302,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarActionPerformed
 
     private void jBCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarMouseClicked
-        System.exit(0);
+     System.exit(0);
     }//GEN-LAST:event_jBCerrarMouseClicked
 
     private void jBCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarSesionMouseClicked
@@ -310,11 +314,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarSesionActionPerformed
 
     private void jBPrestadoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMousePressed
-
+    
     }//GEN-LAST:event_jBPrestadoresMousePressed
 
     private void jBPrestadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMouseClicked
-        // Cargar la imagen para el clic del botón
+          // Cargar la imagen para el clic del botón
         ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
 
         // Asociar la imagen al botón
@@ -329,6 +333,7 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(consulta);
         Escritorio.moveToFront(consulta);
     }//GEN-LAST:event_jBConsultasActionPerformed
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -452,4 +457,5 @@ public class Principal extends javax.swing.JFrame {
         jBCerrarSesion.setEnabled(true);
 
     }
+
 }
