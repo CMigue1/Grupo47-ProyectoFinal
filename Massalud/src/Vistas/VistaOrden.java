@@ -1,40 +1,51 @@
-
 package Vistas;
 
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-
 public class VistaOrden extends javax.swing.JInternalFrame {
-    
-     private DefaultTableModel modelo = new DefaultTableModel();
+
+    private DefaultTableModel modelo = new DefaultTableModel();
 
     private Principal principal;
+    private boolean botonesVisibles = false;
+   
+
     public VistaOrden(Principal principal) {
-        
+
         initComponents();
         armarCabecera();
         this.principal = principal;
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
+
+        jBuscarporAFILIADO1.setVisible(false);
+        jBuscarporPRESTADOR.setVisible(false);
+        jLventanaEmergente.setVisible(false);
+        
+
     }
 
- 
+  
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBuscarporPRESTADOR = new javax.swing.JButton();
+        jBuscarporAFILIADO1 = new javax.swing.JButton();
+        jLventanaEmergente = new javax.swing.JLabel();
         jTnroOrden = new javax.swing.JTextField();
         jTImporte = new javax.swing.JTextField();
         jTAfiliado = new javax.swing.JTextField();
         jTidPrestador = new javax.swing.JTextField();
         jTformadePago1 = new javax.swing.JTextField();
         jBcrearOrden = new javax.swing.JButton();
-        jBmiPerfil = new javax.swing.JButton();
+        jBbuscar = new javax.swing.JButton();
         jBbuscarporFecha = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jBbuscar1 = new javax.swing.JButton();
+        jBmiperfil = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablaOrden = new javax.swing.JTable();
@@ -46,6 +57,31 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(1062, 720));
         setPreferredSize(new java.awt.Dimension(1062, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jBuscarporPRESTADOR.setBorder(null);
+        jBuscarporPRESTADOR.setContentAreaFilled(false);
+        jBuscarporPRESTADOR.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrdenporPrestador-01.png"))); // NOI18N
+        jBuscarporPRESTADOR.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrdenporPrestador-01.png"))); // NOI18N
+        jBuscarporPRESTADOR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscarporPRESTADORActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBuscarporPRESTADOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 210, 40));
+
+        jBuscarporAFILIADO1.setBorder(null);
+        jBuscarporAFILIADO1.setContentAreaFilled(false);
+        jBuscarporAFILIADO1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/buscarporafiliado-01.png"))); // NOI18N
+        jBuscarporAFILIADO1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/buscarporafiliado-01.png"))); // NOI18N
+        jBuscarporAFILIADO1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscarporAFILIADO1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBuscarporAFILIADO1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 200, 40));
+
+        jLventanaEmergente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/VENTANAemergente-01.png"))); // NOI18N
+        getContentPane().add(jLventanaEmergente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 260, 90));
 
         jTnroOrden.setBackground(new java.awt.Color(246, 246, 248));
         jTnroOrden.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
@@ -134,19 +170,27 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jBcrearOrden.setSelected(true);
         getContentPane().add(jBcrearOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 200, 60));
 
-        jBmiPerfil.setBackground(new java.awt.Color(255, 255, 255));
-        jBmiPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/bBuscarOrdenOFF-01.png"))); // NOI18N
-        jBmiPerfil.setBorder(null);
-        jBmiPerfil.setBorderPainted(false);
-        jBmiPerfil.setContentAreaFilled(false);
-        jBmiPerfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrden-01.png"))); // NOI18N
-        jBmiPerfil.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrden-01.png"))); // NOI18N
-        jBmiPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBmiPerfilActionPerformed(evt);
+        jBbuscar.setBackground(new java.awt.Color(255, 255, 255));
+        jBbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/bBuscarOrdenOFF-01.png"))); // NOI18N
+        jBbuscar.setBorder(null);
+        jBbuscar.setBorderPainted(false);
+        jBbuscar.setContentAreaFilled(false);
+        jBbuscar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrden-01.png"))); // NOI18N
+        jBbuscar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BbuscarOrden-01.png"))); // NOI18N
+        jBbuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jBbuscarMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jBbuscarMouseReleased(evt);
             }
         });
-        getContentPane().add(jBmiPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, 70, 60));
+        jBbuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuscarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 240, 70, 60));
 
         jBbuscarporFecha.setBackground(new java.awt.Color(255, 255, 255));
         jBbuscarporFecha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupaOFF-01.png"))); // NOI18N
@@ -165,19 +209,19 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/textBuscar-01.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(921, 300, 80, 30));
 
-        jBbuscar1.setBackground(new java.awt.Color(255, 255, 255));
-        jBbuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcUSER-01.png"))); // NOI18N
-        jBbuscar1.setBorder(null);
-        jBbuscar1.setBorderPainted(false);
-        jBbuscar1.setContentAreaFilled(false);
-        jBbuscar1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcCARNETin-01.png"))); // NOI18N
-        jBbuscar1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcCARNETin-01.png"))); // NOI18N
-        jBbuscar1.addActionListener(new java.awt.event.ActionListener() {
+        jBmiperfil.setBackground(new java.awt.Color(255, 255, 255));
+        jBmiperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcUSER-01.png"))); // NOI18N
+        jBmiperfil.setBorder(null);
+        jBmiperfil.setBorderPainted(false);
+        jBmiperfil.setContentAreaFilled(false);
+        jBmiperfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcCARNETin-01.png"))); // NOI18N
+        jBmiperfil.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcCARNETin-01.png"))); // NOI18N
+        jBmiperfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBbuscar1ActionPerformed(evt);
+                jBmiperfilActionPerformed(evt);
             }
         });
-        getContentPane().add(jBbuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, 70, 80));
+        getContentPane().add(jBmiperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 120, 70, 80));
 
         jLabel2.setFont(new java.awt.Font("Montserrat SemiBold", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -227,9 +271,13 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTidPrestadorActionPerformed
 
-    private void jBmiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmiPerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBmiPerfilActionPerformed
+    private void jBbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarActionPerformed
+        if (botonesVisibles) {
+            ocultarBotones();
+        } else {
+            mostrarBotones();
+        }
+    }//GEN-LAST:event_jBbuscarActionPerformed
 
     private void jTformadePago1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTformadePago1ActionPerformed
         // TODO add your handling code here:
@@ -239,21 +287,44 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBbuscarporFechaActionPerformed
 
-    private void jBbuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBbuscar1ActionPerformed
+    private void jBmiperfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmiperfilActionPerformed
+
+    }//GEN-LAST:event_jBmiperfilActionPerformed
+
+    private void jBbuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBbuscarMousePressed
+      
+    }//GEN-LAST:event_jBbuscarMousePressed
+
+    private void jBbuscarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBbuscarMouseReleased
+        
+    }//GEN-LAST:event_jBbuscarMouseReleased
+
+    private void jBuscarporPRESTADORActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarporPRESTADORActionPerformed
+        BuscarOrdenPrestador bPrestador = new BuscarOrdenPrestador(principal);
+        principal.agregarComponenteAlEscritorio(bPrestador);
+        
+     
+    }//GEN-LAST:event_jBuscarporPRESTADORActionPerformed
+
+    private void jBuscarporAFILIADO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarporAFILIADO1ActionPerformed
+        BuscarOrdenAfiliado bAfiliado = new BuscarOrdenAfiliado(principal);
+        principal.agregarComponenteAlEscritorio(bAfiliado);
+    }//GEN-LAST:event_jBuscarporAFILIADO1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBbuscar1;
+    private javax.swing.JButton jBbuscar;
     private javax.swing.JButton jBbuscarporFecha;
     private javax.swing.JButton jBcrearOrden;
-    private javax.swing.JButton jBmiPerfil;
+    private javax.swing.JButton jBmiperfil;
+    private javax.swing.JButton jBuscarporAFILIADO1;
+    private javax.swing.JButton jBuscarporPRESTADOR;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLfondoVista;
+    private javax.swing.JLabel jLventanaEmergente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTAfiliado;
     private javax.swing.JTextField jTImporte;
@@ -263,8 +334,7 @@ public class VistaOrden extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTnroOrden;
     // End of variables declaration//GEN-END:variables
 
-
-  private void armarCabecera() {
+    private void armarCabecera() {
         //Orden(LocalDate fecha, String formaPago, double importe, Afiliado afiliado, Prestador prestador) 
         modelo.addColumn("Orden Nro");
         modelo.addColumn("Fecha");
@@ -273,5 +343,20 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         modelo.addColumn("Afiliado");
         modelo.addColumn("Prestador");
         jTablaOrden.setModel(modelo);
+    }
+
+    private void mostrarBotones() {
+        botonesVisibles = true;
+        jBuscarporAFILIADO1.setVisible(true);
+        jBuscarporPRESTADOR.setVisible(true);
+        jLventanaEmergente.setVisible(true);
+        
+    }
+
+    private void ocultarBotones() {
+        botonesVisibles = false;
+        jBuscarporAFILIADO1.setVisible(false);
+        jBuscarporPRESTADOR.setVisible(false);
+        jLventanaEmergente.setVisible(false);
     }
 }

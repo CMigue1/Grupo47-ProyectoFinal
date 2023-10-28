@@ -9,11 +9,14 @@ import java.awt.event.ActionListener;
 public class Principal extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    
+    
 
     public Principal() {
         initComponents();
         establecerFondoEscritorio();
-        deshabilitarBotones();
+        
+        //deshabilitarBotones();
         // ... Resto del código ...
 
         // Cargar la imagen para el clic del botón
@@ -47,7 +50,6 @@ public class Principal extends javax.swing.JFrame {
         jBPlanes = new javax.swing.JButton();
         jBCerrarSesion = new javax.swing.JButton();
         jBCerrar = new javax.swing.JButton();
-        jBIniciarSesion = new javax.swing.JButton();
         jBConsultas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Pantalla = new javax.swing.JPanel();
@@ -166,14 +168,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         BarraIzquierda.add(jBCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 220, 50));
-
-        jBIniciarSesion.setText("Iniciar Sesion");
-        jBIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIniciarSesionActionPerformed(evt);
-            }
-        });
-        BarraIzquierda.add(jBIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 470, 160, 30));
 
         jBConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/conButton-01.png"))); // NOI18N
         jBConsultas.setBorder(null);
@@ -336,10 +330,6 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.moveToFront(consulta);
     }//GEN-LAST:event_jBConsultasActionPerformed
 
-    private void jBIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIniciarSesionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBIniciarSesionActionPerformed
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -412,7 +402,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBCerrar;
     private javax.swing.JButton jBCerrarSesion;
     private javax.swing.JButton jBConsultas;
-    private javax.swing.JButton jBIniciarSesion;
     private javax.swing.JButton jBOrden;
     private javax.swing.JButton jBPlanes;
     private javax.swing.JButton jBPrestadores;
@@ -459,7 +448,7 @@ public class Principal extends javax.swing.JFrame {
         jBPrestadores.setEnabled(true);
         jBOrden.setEnabled(true);
         jBConsultas.setEnabled(true);
-        jBIniciarSesion.setEnabled(false);
+//        jBIniciarSesion.setEnabled(false);
         jBCerrarSesion.setEnabled(true);
 
     }

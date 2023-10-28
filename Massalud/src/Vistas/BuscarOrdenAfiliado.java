@@ -136,7 +136,7 @@ public class BuscarOrdenAfiliado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBregresarlatIzqActionPerformed
 
     private void jBregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_jBregresarActionPerformed
 
     private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed

@@ -1,26 +1,32 @@
-
 package Vistas;
 
+import javax.swing.JInternalFrame;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
-
 public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
-    
-     private DefaultTableModel modelo = new DefaultTableModel();
+
+    private DefaultTableModel modelo = new DefaultTableModel();
 
     private Principal principal;
+    private VistaOrden orden;
+    private JInternalFrame currentInternalFrame;
+    
+    
+
     public BuscarOrdenPrestador(Principal principal) {
-        
+
         initComponents();
         armarCabecera();
+        
         this.principal = principal;
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
+           
+
     }
 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,7 +34,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         jTidPrestador = new javax.swing.JTextField();
         texto = new javax.swing.JLabel();
         jBuscarAfiliadoporID = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jBvolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTPrestadores = new javax.swing.JTable();
         jBregresarlatIzq = new javax.swing.JButton();
@@ -69,18 +75,18 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         });
         getContentPane().add(jBuscarAfiliadoporID, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 30, 20));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARoff-01.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
-        jButton1.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARoff-01.png"))); // NOI18N
+        jBvolver.setBorder(null);
+        jBvolver.setBorderPainted(false);
+        jBvolver.setContentAreaFilled(false);
+        jBvolver.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
+        jBvolver.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARin-01.png"))); // NOI18N
+        jBvolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBvolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 50, 40));
+        getContentPane().add(jBvolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 50, 40));
 
         jTPrestadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -127,20 +133,21 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jBvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvolverActionPerformed
+ 
+    }//GEN-LAST:event_jBvolverActionPerformed
 
     private void jBuscarAfiliadoporIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarAfiliadoporIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBuscarAfiliadoporIDActionPerformed
 
     private void jBregresarlatIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatIzqActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jBregresarlatIzqActionPerformed
 
     private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_jBregresarlatDer1ActionPerformed
 
 
@@ -148,7 +155,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBregresarlatDer1;
     private javax.swing.JButton jBregresarlatIzq;
     private javax.swing.JButton jBuscarAfiliadoporID;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBvolver;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTPrestadores;
@@ -156,8 +163,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 
-
-  private void armarCabecera() {
+    private void armarCabecera() {
         //Orden(LocalDate fecha, String formaPago, double importe, Afiliado afiliado, Prestador prestador) 
         modelo.addColumn("Orden Nro");
         modelo.addColumn("Fecha");

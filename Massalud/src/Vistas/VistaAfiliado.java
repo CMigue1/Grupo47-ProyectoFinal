@@ -105,11 +105,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTNombreMouseClicked(evt);
             }
         });
-        jTNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTNombreActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 290, 30));
 
         jTApellido1.setBackground(new java.awt.Color(255, 255, 255));
@@ -122,11 +117,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTApellido1MouseClicked(evt);
             }
         });
-        jTApellido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTApellido1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 290, 30));
 
         jTdocumento.setBackground(new java.awt.Color(255, 255, 255));
@@ -137,11 +127,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         jTdocumento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTdocumentoMouseClicked(evt);
-            }
-        });
-        jTdocumento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdocumentoActionPerformed(evt);
             }
         });
         jPanel1.add(jTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 290, 30));
@@ -301,18 +286,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     private void jTtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTtelefonoActionPerformed
-
-    private void jTNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombreActionPerformed
-
-    }//GEN-LAST:event_jTNombreActionPerformed
-
-    private void jTApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTApellido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTApellido1ActionPerformed
-
-    private void jTdocumentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdocumentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdocumentoActionPerformed
 
     private void jTdireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdireccionActionPerformed
         // TODO add your handling code here:
