@@ -1,3 +1,4 @@
+
 package Vistas;
 
 import javax.swing.JInternalFrame;
@@ -6,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class Principal extends javax.swing.JFrame {
 
     int xMouse, yMouse;
@@ -13,7 +15,6 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         establecerFondoEscritorio();
-        deshabilitarBotones();
         // ... Resto del código ...
 
         // Cargar la imagen para el clic del botón
@@ -33,7 +34,10 @@ public class Principal extends javax.swing.JFrame {
 ////         jBPrestadores.setIcon(nuevaImagen);
 //        }
 //    });
-    }
+}
+  
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -47,7 +51,6 @@ public class Principal extends javax.swing.JFrame {
         jBPlanes = new javax.swing.JButton();
         jBCerrarSesion = new javax.swing.JButton();
         jBCerrar = new javax.swing.JButton();
-        jBIniciarSesion = new javax.swing.JButton();
         jBConsultas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Pantalla = new javax.swing.JPanel();
@@ -166,14 +169,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         BarraIzquierda.add(jBCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 220, 50));
-
-        jBIniciarSesion.setText("Iniciar Sesion");
-        jBIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBIniciarSesionActionPerformed(evt);
-            }
-        });
-        BarraIzquierda.add(jBIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 470, 160, 30));
 
         jBConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/conButton-01.png"))); // NOI18N
         jBConsultas.setBorder(null);
@@ -304,7 +299,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarActionPerformed
 
     private void jBCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarMouseClicked
-        System.exit(0);
+     System.exit(0);
     }//GEN-LAST:event_jBCerrarMouseClicked
 
     private void jBCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarSesionMouseClicked
@@ -316,11 +311,11 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarSesionActionPerformed
 
     private void jBPrestadoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMousePressed
-
+    
     }//GEN-LAST:event_jBPrestadoresMousePressed
 
     private void jBPrestadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMouseClicked
-        // Cargar la imagen para el clic del botón
+          // Cargar la imagen para el clic del botón
         ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
 
         // Asociar la imagen al botón
@@ -336,10 +331,7 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.moveToFront(consulta);
     }//GEN-LAST:event_jBConsultasActionPerformed
 
-    private void jBIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBIniciarSesionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBIniciarSesionActionPerformed
-
+  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -412,7 +404,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBCerrar;
     private javax.swing.JButton jBCerrarSesion;
     private javax.swing.JButton jBConsultas;
-    private javax.swing.JButton jBIniciarSesion;
     private javax.swing.JButton jBOrden;
     private javax.swing.JButton jBPlanes;
     private javax.swing.JButton jBPrestadores;
@@ -443,24 +434,4 @@ public class Principal extends javax.swing.JFrame {
         }
     }
 
-    public void deshabilitarBotones() {
-        jBPlanes.setEnabled(false);
-        jBAfiliado.setEnabled(false);
-        jBPrestadores.setEnabled(false);
-        jBOrden.setEnabled(false);
-        jBConsultas.setEnabled(false);
-        jBCerrarSesion.setEnabled(false);
-
-    }
-
-    public void habilitarBotones() {
-        jBPlanes.setEnabled(true);
-        jBAfiliado.setEnabled(true);
-        jBPrestadores.setEnabled(true);
-        jBOrden.setEnabled(true);
-        jBConsultas.setEnabled(true);
-        jBIniciarSesion.setEnabled(false);
-        jBCerrarSesion.setEnabled(true);
-
-    }
 }
