@@ -2,11 +2,13 @@
 package Vistas;
 
 import AccesoADatos.Conexion;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 public class Login extends javax.swing.JFrame {
@@ -15,6 +17,11 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.principal= principal;
+        JTextField jTContrasen=new JTextField();
+        jTContrasen.setOpaque(false);
+        jTContrasen.setForeground(Color.white);
+        JTextField jTUsuari=new JTextField();
+        jTUsuari.setOpaque(false);
     }
 
   
@@ -29,8 +36,6 @@ public class Login extends javax.swing.JFrame {
         jTContrasena = new javax.swing.JPasswordField();
         jBregistrarme = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         BarraSuperior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,12 +69,14 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jBLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, 220, 60));
 
+        jTUsuario.setBackground(null);
+        jTUsuario.setBorder(null);
         jTUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTUsuarioMouseClicked(evt);
             }
         });
-        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 340, -1));
+        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 434, 420, 50));
         getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 340, -1));
 
         jBregistrarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaSECUNDARIO-01.png"))); // NOI18N
@@ -85,12 +92,6 @@ public class Login extends javax.swing.JFrame {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/iniciarSesion-01.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1280, 740));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 433, 420, 50));
 
         BarraSuperior.setPreferredSize(new java.awt.Dimension(1030, 50));
         BarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -211,9 +212,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jBregistrarme;
     private javax.swing.JButton jBregistrase2;
     private javax.swing.JLabel jLSalirdeInterfaz2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPasswordField jTContrasena;
     private javax.swing.JTextField jTUsuario;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

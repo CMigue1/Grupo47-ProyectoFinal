@@ -20,7 +20,7 @@ public class Registrarse extends javax.swing.JFrame {
     public Registrarse() {
         initComponents();
         admData = new AdministrativoData();
-        jBLogin.setVisible(false);
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -169,7 +169,6 @@ public class Registrarse extends javax.swing.JFrame {
 
             if (jTUsuario.getText().isEmpty() || jTContrasena.getText().isEmpty() || jTNombre.getText().isEmpty()|| jTApellido.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
-                jBLogin.setVisible(true);
                 return;
             }
             Administrativo administrativo = new Administrativo(usuario, nombre, apellido, contrasena);
