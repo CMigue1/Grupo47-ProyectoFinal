@@ -27,6 +27,7 @@ public class Registrarse extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLSalirdeInterfaz2 = new javax.swing.JLabel();
         jBlogin2 = new javax.swing.JButton();
         jBLogin = new javax.swing.JButton();
         jBregistrarme = new javax.swing.JButton();
@@ -36,6 +37,17 @@ public class Registrarse extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLSalirdeInterfaz2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLSalirdeInterfaz2.setForeground(new java.awt.Color(255, 255, 255));
+        jLSalirdeInterfaz2.setText(" X");
+        jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLSalirdeInterfaz2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLSalirdeInterfaz2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLSalirdeInterfaz2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 0, 40, 50));
 
         jBlogin2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         jBlogin2.setBorder(null);
@@ -56,6 +68,7 @@ public class Registrarse extends javax.swing.JFrame {
         jBregistrarme.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaIN-01.png"))); // NOI18N
         getContentPane().add(jBregistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 220, 50));
 
+        fondo.setForeground(new java.awt.Color(255, 255, 255));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/registarse-01.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1280, 740));
 
@@ -67,6 +80,10 @@ public class Registrarse extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLSalirdeInterfaz2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLSalirdeInterfaz2MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLSalirdeInterfaz2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -109,6 +126,9 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JButton jBLogin;
     private javax.swing.JButton jBlogin2;
     private javax.swing.JButton jBregistrarme;
+    private javax.swing.JLabel jLSalirdeInterfaz;
+    private javax.swing.JLabel jLSalirdeInterfaz1;
+    private javax.swing.JLabel jLSalirdeInterfaz2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
