@@ -84,7 +84,8 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         getContentPane().add(jBsalirMENSAJE, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, 210, 60));
 
         jLMENSAJEexitoso.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
-        jLMENSAJEexitoso.setText("Se ha guardado con exito!");
+        jLMENSAJEexitoso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLMENSAJEexitoso.setText("Afiliado guardado con exito!");
         getContentPane().add(jLMENSAJEexitoso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 220, 40));
 
         jLfondoalert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/Joption-01.png"))); // NOI18N
