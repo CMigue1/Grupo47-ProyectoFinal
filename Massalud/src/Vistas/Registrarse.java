@@ -33,7 +33,7 @@ public class Registrarse extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLSalirdeInterfaz2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLSalirdeInterfaz2.setForeground(new java.awt.Color(255, 255, 255));
         jLSalirdeInterfaz2.setText(" X");
         jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

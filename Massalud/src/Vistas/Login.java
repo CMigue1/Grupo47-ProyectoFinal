@@ -27,7 +27,7 @@ public class Login extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLSalirdeInterfaz2.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLSalirdeInterfaz2.setForeground(new java.awt.Color(255, 255, 255));
         jLSalirdeInterfaz2.setText(" X");
         jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

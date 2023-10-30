@@ -56,6 +56,10 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jBsalirMENSAJE = new javax.swing.JButton();
+        jLtituloAlerta = new javax.swing.JLabel();
+        jLMENSAJEalerta1 = new javax.swing.JLabel();
+        jLfondoalert = new javax.swing.JLabel();
         txtAfiliadoId = new javax.swing.JTextField();
         txtIdAfiliado = new javax.swing.JTextField();
         txtApellidoAf = new javax.swing.JTextField();
@@ -87,6 +91,24 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         FONDO = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jBsalirMENSAJE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerror-01.png"))); // NOI18N
+        jBsalirMENSAJE.setBorder(null);
+        jBsalirMENSAJE.setContentAreaFilled(false);
+        jBsalirMENSAJE.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerrorIN-01.png"))); // NOI18N
+        jBsalirMENSAJE.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerrorIN-01.png"))); // NOI18N
+        getContentPane().add(jBsalirMENSAJE, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 210, 60));
+
+        jLtituloAlerta.setFont(new java.awt.Font("Montserrat Medium", 1, 24)); // NOI18N
+        jLtituloAlerta.setText("Cuidado!");
+        getContentPane().add(jLtituloAlerta, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 120, 40));
+
+        jLMENSAJEalerta1.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
+        jLMENSAJEalerta1.setText("Por favor corrija los campos.");
+        getContentPane().add(jLMENSAJEalerta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 250, 40));
+
+        jLfondoalert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/Joptionerror-01.png"))); // NOI18N
+        getContentPane().add(jLfondoalert, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 410, 440));
 
         txtAfiliadoId.setBackground(new java.awt.Color(247, 247, 249));
         txtAfiliadoId.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
@@ -891,7 +913,11 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<Especialidad> cbxEspecialidad;
     private javax.swing.JComboBox<String> cbxEstadoAf;
     private javax.swing.JComboBox<String> cbxEstadoPr;
+    private javax.swing.JButton jBsalirMENSAJE;
     private javax.swing.JComboBox<Plan> jCPlan1;
+    private javax.swing.JLabel jLMENSAJEalerta1;
+    private javax.swing.JLabel jLfondoalert;
+    private javax.swing.JLabel jLtituloAlerta;
     private javax.swing.JTextField txtAfiliadoDni;
     private javax.swing.JTextField txtAfiliadoId;
     private javax.swing.JTextField txtApellidoAf;
