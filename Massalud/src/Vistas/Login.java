@@ -1,12 +1,20 @@
 
 package Vistas;
 
+import AccesoADatos.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 
 public class Login extends javax.swing.JFrame {
-
+    Principal principal = new Principal();
     int xMouse, yMouse;
     public Login() {
         initComponents();
+        this.principal= principal;
     }
 
   
@@ -17,6 +25,8 @@ public class Login extends javax.swing.JFrame {
         jLSalirdeInterfaz2 = new javax.swing.JLabel();
         jBregistrase2 = new javax.swing.JButton();
         jBLogin = new javax.swing.JButton();
+        jTUsuario = new javax.swing.JTextField();
+        jTContrasena = new javax.swing.JPasswordField();
         jBregistrarme = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -47,12 +57,30 @@ public class Login extends javax.swing.JFrame {
         jBLogin.setBorder(null);
         jBLogin.setContentAreaFilled(false);
         jBLogin.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/loginIN-01.png"))); // NOI18N
+        jBLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLoginActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, 220, 60));
+
+        jTUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTUsuarioMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 340, -1));
+        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 340, -1));
 
         jBregistrarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaSECUNDARIO-01.png"))); // NOI18N
         jBregistrarme.setBorder(null);
         jBregistrarme.setContentAreaFilled(false);
         jBregistrarme.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaOFF-01.png"))); // NOI18N
+        jBregistrarme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBregistrarmeActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBregistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, 220, 50));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/iniciarSesion-01.png"))); // NOI18N
@@ -98,6 +126,49 @@ public class Login extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_BarraSuperiorMousePressed
 
+    private void jBLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLoginActionPerformed
+       
+        String usuario = jTUsuario.getText().trim();
+        String contrasena = jTContrasena.getText().trim();
+        if (!usuario.equals("") && !contrasena.equals("")) {
+
+            Connection cn = Conexion.getConexion();
+            try {
+                PreparedStatement ps = cn.prepareStatement("SELECT  * FROM administrativo WHERE usuario = ? and  contrasena = ?");
+                ps.setString(1, usuario);
+                ps.setString(2, contrasena);
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+
+                    principal.setVisible(true);
+                    this.dispose();
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Datos de acceso incorrectos.");
+                    jTUsuario.setText("Usuario");
+                    jTContrasena.setText("Contraseña");
+                }
+            } catch (SQLException ex) {
+                System.err.println("Error en el boton acceder " + ex);
+                JOptionPane.showMessageDialog(null, "¡Error al iniciar sesión!, conectate con el Administrador");
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Debes llenar todos los campos...");
+        }
+                   
+    }//GEN-LAST:event_jBLoginActionPerformed
+
+    private void jTUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTUsuarioMouseClicked
+
+    }//GEN-LAST:event_jTUsuarioMouseClicked
+
+    private void jBregistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregistrarmeActionPerformed
+        Registrarse registrarse = new Registrarse();
+        registrarse.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jBregistrarmeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -141,6 +212,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jBregistrase2;
     private javax.swing.JLabel jLSalirdeInterfaz2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField jTContrasena;
+    private javax.swing.JTextField jTUsuario;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
