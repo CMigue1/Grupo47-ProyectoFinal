@@ -33,7 +33,7 @@ public class Registrarse extends javax.swing.JFrame {
         jBregistrarme = new javax.swing.JButton();
         jTContrasena1 = new javax.swing.JPasswordField();
         jTUsuario1 = new javax.swing.JTextField();
-        jTNombre = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jTApellido = new javax.swing.JTextField();
         fondo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -48,7 +48,7 @@ public class Registrarse extends javax.swing.JFrame {
         jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLSalirdeInterfaz2.setForeground(new java.awt.Color(255, 255, 255));
         jLSalirdeInterfaz2.setText(" X");
-        jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLSalirdeInterfaz2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLSalirdeInterfaz2MouseClicked(evt);
@@ -80,7 +80,7 @@ public class Registrarse extends javax.swing.JFrame {
         jBregistrarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaOFF-01.png"))); // NOI18N
         jBregistrarme.setBorder(null);
         jBregistrarme.setContentAreaFilled(false);
-        jBregistrarme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBregistrarme.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBregistrarme.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaIN-01.png"))); // NOI18N
         jBregistrarme.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaIN-01.png"))); // NOI18N
         jBregistrarme.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +97,7 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 260, -1));
-        getContentPane().add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 150, -1));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 150, -1));
         getContentPane().add(jTApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 150, -1));
 
         fondo.setForeground(new java.awt.Color(255, 255, 255));
@@ -164,10 +164,10 @@ public class Registrarse extends javax.swing.JFrame {
            try {
             String usuario = jTUsuario.getText().trim();
             String contrasena = jTContrasena.getText().trim();
-            String nombre= jTNombre.getText().trim();
+            String nombre= txtNombre.getText().trim();
             String apellido= jTApellido.getText().trim();
 
-            if (jTUsuario.getText().isEmpty() || jTContrasena.getText().isEmpty() || jTNombre.getText().isEmpty()|| jTApellido.getText().isEmpty()) {
+            if (jTUsuario.getText().isEmpty() || jTContrasena.getText().isEmpty() || txtNombre.getText().isEmpty()|| jTApellido.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
                 return;
             }
@@ -235,9 +235,9 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JTextField jTApellido;
     private javax.swing.JPasswordField jTContrasena;
     private javax.swing.JPasswordField jTContrasena1;
-    private javax.swing.JTextField jTNombre;
     private javax.swing.JTextField jTUsuario;
     private javax.swing.JTextField jTUsuario1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

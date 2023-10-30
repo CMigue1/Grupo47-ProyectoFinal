@@ -45,7 +45,7 @@ public class Login extends javax.swing.JFrame {
         jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
         jLSalirdeInterfaz2.setForeground(new java.awt.Color(255, 255, 255));
         jLSalirdeInterfaz2.setText(" X");
-        jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLSalirdeInterfaz2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLSalirdeInterfaz2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLSalirdeInterfaz2MouseClicked(evt);
