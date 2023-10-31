@@ -48,13 +48,14 @@ public class OrdenData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 orden.setIdOrden(rs.getInt(1));
-//                JOptionPane.showMessageDialog(null, "Orden añadida con exito.");
+                JOptionPane.showMessageDialog(null, "Orden añadida con exito.");
 
             }
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error, no se ha podido acceder a la tabla Orden" + ex);
+            JOptionPane.showMessageDialog(null, "Error, no se ha podido acceder a la tabla Orden");
+            System.out.println(ex.getMessage());
         }
 
     }
@@ -70,7 +71,8 @@ public class OrdenData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Orden " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Orden ");
+            System.out.println(ex.getMessage());
         }
 
     }
@@ -84,7 +86,6 @@ public class OrdenData {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-
                 Orden orden = new Orden();
                 orden.setIdOrden(rs.getInt("idOrden"));
                 orden.setFecha(rs.getDate("fecha").toLocalDate());
@@ -92,26 +93,21 @@ public class OrdenData {
                 orden.setImporte(rs.getDouble("importe"));
                 orden.setAfiliado(afilData.buscarAfiliado(rs.getInt("idAfiliado")));
                 orden.setPrestador(presData.buscarPrestador(rs.getInt("idPrestador")));
-
-                ordenes.add(orden);
-                
+                ordenes.add(orden);                
             }            
             if (ordenes.isEmpty()) {                
-                JOptionPane.showMessageDialog(null, "No se encontraron órdenes para la fecha especificada.");
+                JOptionPane.showMessageDialog(null, "No se encontraron órdenes para la fecha especificada.");                
             }
-            ps.close();
-            
-            
-
+            ps.close();                        
         } catch (SQLException ex) {
-            System.out.println("Error" + ex);
+            System.out.println("Error");
+            System.out.println(ex.getMessage());
         }
         return ordenes;
     }
 
     public List<Orden> buscarOrdenPorAfiliado(int id) {
         ArrayList<Orden> ordenes = new ArrayList<>();
-
         try {
             String sql = "SELECT * FROM orden AS o JOIN afiliado AS a ON(o.idAfiliado = a.idAfiliado) WHERE o.idAfiliado = ?";
             System.out.println(sql);
@@ -127,11 +123,11 @@ public class OrdenData {
                 orden.setAfiliado(afilData.buscarAfiliado(rs.getInt("idAfiliado")));
                 orden.setPrestador(presData.buscarPrestador(rs.getInt("idPrestador")));
                 ordenes.add(orden);
-
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
 
         return ordenes;
@@ -159,7 +155,8 @@ public class OrdenData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
 
         return ordenes;

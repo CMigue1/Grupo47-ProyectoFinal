@@ -3,8 +3,6 @@ package Vistas;
 import javax.swing.JInternalFrame;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Principal extends javax.swing.JFrame {
 
@@ -13,25 +11,11 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         establecerFondoEscritorio();
-
-        // ... Resto del código ...
-        // Cargar la imagen para el clic del botón
-//        ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
-//
-//        // Asociar la imagen al botón
-//        jBPrestadores.setPressedIcon(clicIcon);
-//
-//         //Agregar un ActionListener al botón
-//        jBPrestadores.addActionListener(new ActionListener() {
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//            // Aquí puedes realizar acciones al hacer clic en el botón
-//        // Cambiar la imagen si es necesario
-//        // Por ejemplo:
-////         ImageIcon nuevaImagen = new ImageIcon(getClass().getResource("/img/nueva_imagen.png"));
-////         jBPrestadores.setIcon(nuevaImagen);
-//        }
-//    });
+    }
+     @Override
+   public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/iconoMARCA-01.png"));
+        return retValue;
     }
 
     @SuppressWarnings("unchecked")
@@ -54,6 +38,7 @@ public class Principal extends javax.swing.JFrame {
         BarraSuperior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
         setSize(new java.awt.Dimension(1130, 560));
 
@@ -70,9 +55,10 @@ public class Principal extends javax.swing.JFrame {
         jBAfiliado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBAfiliado.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/afiliadosPASARCURSOR-01.png"))); // NOI18N
         jBAfiliado.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/afiliadosIN-01.png"))); // NOI18N
-        jBAfiliado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBAfiliadoMouseClicked(evt);
+        jBAfiliado.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/afiliadosIN-01.png"))); // NOI18N
+        jBAfiliado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAfiliadoActionPerformed(evt);
             }
         });
         BarraIzquierda.add(jBAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 220, 50));
@@ -84,14 +70,6 @@ public class Principal extends javax.swing.JFrame {
         jBPrestadores.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/prestadoresCURSOR-01.png"))); // NOI18N
         jBPrestadores.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"))); // NOI18N
         jBPrestadores.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"))); // NOI18N
-        jBPrestadores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBPrestadoresMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jBPrestadoresMousePressed(evt);
-            }
-        });
         jBPrestadores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBPrestadoresActionPerformed(evt);
@@ -105,9 +83,10 @@ public class Principal extends javax.swing.JFrame {
         jBOrden.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBOrden.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ordenesCURSOR-01.png"))); // NOI18N
         jBOrden.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ordenesIN-01.png"))); // NOI18N
-        jBOrden.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBOrdenMouseClicked(evt);
+        jBOrden.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ordenesIN-01.png"))); // NOI18N
+        jBOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOrdenActionPerformed(evt);
             }
         });
         BarraIzquierda.add(jBOrden, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 220, 60));
@@ -118,11 +97,7 @@ public class Principal extends javax.swing.JFrame {
         jBPlanes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBPlanes.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/planesPASARCURSOR-01.png"))); // NOI18N
         jBPlanes.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/planesIN-01.png"))); // NOI18N
-        jBPlanes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBPlanesMouseClicked(evt);
-            }
-        });
+        jBPlanes.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/planesIN-01.png"))); // NOI18N
         jBPlanes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBPlanesActionPerformed(evt);
@@ -136,11 +111,7 @@ public class Principal extends javax.swing.JFrame {
         jBCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBCerrarSesion.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarsesionCURSOR-01.png"))); // NOI18N
         jBCerrarSesion.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarsesionIN-01.png"))); // NOI18N
-        jBCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBCerrarSesionMouseClicked(evt);
-            }
-        });
+        jBCerrarSesion.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarsesionIN-01.png"))); // NOI18N
         jBCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBCerrarSesionActionPerformed(evt);
@@ -154,11 +125,7 @@ public class Principal extends javax.swing.JFrame {
         jBCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jBCerrar.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarCURSOR-01.png"))); // NOI18N
         jBCerrar.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salirIN-01.png"))); // NOI18N
-        jBCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBCerrarMouseClicked(evt);
-            }
-        });
+        jBCerrar.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salirIN-01.png"))); // NOI18N
         jBCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBCerrarActionPerformed(evt);
@@ -171,12 +138,13 @@ public class Principal extends javax.swing.JFrame {
         jBConsultas.setContentAreaFilled(false);
         jBConsultas.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/conButtonCursor-01.png"))); // NOI18N
         jBConsultas.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/conButtonIN-01.png"))); // NOI18N
+        jBConsultas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/conButtonIN-01.png"))); // NOI18N
         jBConsultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBConsultasActionPerformed(evt);
             }
         });
-        BarraIzquierda.add(jBConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 372, 220, 60));
+        BarraIzquierda.add(jBConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 220, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/barra izquierda-01.png"))); // NOI18N
         BarraIzquierda.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
@@ -247,51 +215,15 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraSuperiorMouseDragged
-
         int x = evt.getXOnScreen();
         int y = evt.getYOnScreen();
         this.setLocation(x - xMouse, y - yMouse);
     }//GEN-LAST:event_BarraSuperiorMouseDragged
 
     private void BarraSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BarraSuperiorMousePressed
-        // TODO add your handling code here:
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_BarraSuperiorMousePressed
-
-    private void jBPlanesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPlanesMouseClicked
-        // TODO add your handling code here:
-        Escritorio.removeAll();
-        Escritorio.repaint();
-        VistaPlanes planes = new VistaPlanes(this);
-        planes.setVisible(true);
-        Escritorio.add(planes);
-        Escritorio.moveToFront(planes);
-    }//GEN-LAST:event_jBPlanesMouseClicked
-
-    private void jBAfiliadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBAfiliadoMouseClicked
-        // TODO add your handling code here:
-        Escritorio.removeAll();
-        Escritorio.repaint();
-        VistaAfiliado afiliado = new VistaAfiliado(this);
-        afiliado.setVisible(true);
-        Escritorio.add(afiliado);
-        Escritorio.moveToFront(afiliado);
-    }//GEN-LAST:event_jBAfiliadoMouseClicked
-
-    private void jBOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBOrdenMouseClicked
-        // TODO add your handling code here:
-        Escritorio.removeAll();
-        Escritorio.repaint();
-        VistaOrden ordenes = new VistaOrden(this);
-        ordenes.setVisible(true);
-        Escritorio.add(ordenes);
-        Escritorio.moveToFront(ordenes);
-    }//GEN-LAST:event_jBOrdenMouseClicked
-
-    private void jBPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPlanesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBPlanesActionPerformed
 
     private void jBPrestadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPrestadoresActionPerformed
         Escritorio.removeAll();
@@ -302,37 +234,11 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.moveToFront(prestador);
     }//GEN-LAST:event_jBPrestadoresActionPerformed
 
-    private void jBCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarActionPerformed
-        System.exit(0);
-        //establecerFondoEscritorio();
-    }//GEN-LAST:event_jBCerrarActionPerformed
-
-    private void jBCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jBCerrarMouseClicked
-
-    private void jBCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarSesionMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBCerrarSesionMouseClicked
-
     private void jBCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarSesionActionPerformed
         Login login = new Login();
         login.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_jBCerrarSesionActionPerformed
-
-    private void jBPrestadoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMousePressed
-
-    }//GEN-LAST:event_jBPrestadoresMousePressed
-
-    private void jBPrestadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMouseClicked
-        // Cargar la imagen para el clic del botón
-        ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
-
-        // Asociar la imagen al botón
-        jBPrestadores.setRolloverSelectedIcon(clicIcon);
-    }//GEN-LAST:event_jBPrestadoresMouseClicked
 
     private void jBConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBConsultasActionPerformed
         Escritorio.removeAll();
@@ -342,6 +248,38 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(consulta);
         Escritorio.moveToFront(consulta);
     }//GEN-LAST:event_jBConsultasActionPerformed
+
+    private void jBPlanesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPlanesActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        VistaPlanes planes = new VistaPlanes(this);
+        planes.setVisible(true);
+        Escritorio.add(planes);
+        Escritorio.moveToFront(planes);
+    }//GEN-LAST:event_jBPlanesActionPerformed
+
+    private void jBAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAfiliadoActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        VistaAfiliado afiliado = new VistaAfiliado(this);
+        afiliado.setVisible(true);
+        Escritorio.add(afiliado);
+        Escritorio.moveToFront(afiliado);
+    }//GEN-LAST:event_jBAfiliadoActionPerformed
+
+    private void jBOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOrdenActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        VistaOrden ordenes = new VistaOrden(this);
+        ordenes.setVisible(true);
+        Escritorio.add(ordenes);
+        Escritorio.moveToFront(ordenes);
+    }//GEN-LAST:event_jBOrdenActionPerformed
+
+    private void jBCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarActionPerformed
+        System.exit(0);
+        
+    }//GEN-LAST:event_jBCerrarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

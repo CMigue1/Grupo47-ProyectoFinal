@@ -45,7 +45,8 @@ public class EspecialidadData {
         }
         ps.close();
     } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad " + ex.getMessage());
+        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad ");
+        System.out.println(ex.getMessage());
     }
     return especialidad;
 }
@@ -64,7 +65,8 @@ public class EspecialidadData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad");
+            System.out.println(ex.getMessage());
         }
     }
     
@@ -80,8 +82,8 @@ public class EspecialidadData {
                 JOptionPane.showMessageDialog(null, "Se modifico la especialidad con exito");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad " + ex.getMessage());
-            
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad ");
+            System.out.println(ex.getMessage());
         }
         
     }
@@ -106,7 +108,8 @@ public class EspecialidadData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Especialidad ");
+            System.out.println(ex.getMessage());
         }
         
         return especialidades;

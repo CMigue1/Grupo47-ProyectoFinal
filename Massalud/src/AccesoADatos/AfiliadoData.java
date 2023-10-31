@@ -45,11 +45,12 @@ public class AfiliadoData {
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 afiliado.setIdAfiliado(rs.getInt(1));
-                
+                JOptionPane.showMessageDialog(null, "Afiliado añadido con exito");
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex);
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
 
     }
@@ -79,7 +80,8 @@ public class AfiliadoData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
 
         }
 
@@ -114,7 +116,8 @@ public class AfiliadoData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
 
         return afiliado;
@@ -146,7 +149,8 @@ public class AfiliadoData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
 
         return afiliados;
@@ -171,7 +175,7 @@ public class AfiliadoData {
                 JOptionPane.showMessageDialog(null, "Se modifico el afiliado con exito");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
             System.out.println(ex);
         }
 
@@ -188,7 +192,8 @@ public class AfiliadoData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado ");
+            System.out.println(ex.getMessage());
         }
     }
 
@@ -208,7 +213,8 @@ public class AfiliadoData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliados" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliados");
+            System.out.println(ex.getMessage());
         }
         return afiliados;
     }

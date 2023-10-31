@@ -49,7 +49,8 @@ public class PrestadorData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
         }
 
     }
@@ -79,7 +80,8 @@ public class PrestadorData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
 
         }
 
@@ -112,7 +114,8 @@ public class PrestadorData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
         }
 
         return prestador;
@@ -143,7 +146,8 @@ public class PrestadorData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
         }
         return prestadores;
     }
@@ -166,7 +170,8 @@ public class PrestadorData {
                 JOptionPane.showMessageDialog(null, "Se modifico el prestador con exito");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
             
         }
 
@@ -183,7 +188,8 @@ public class PrestadorData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
         }
     }
     
@@ -203,7 +209,8 @@ public class PrestadorData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Prestador ");
+            System.out.println(ex.getMessage());
         }
         return prestadores;
     }

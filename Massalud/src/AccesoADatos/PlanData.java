@@ -50,7 +50,8 @@ public class PlanData {
 
         ps.close();
     } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan " + ex.getMessage());
+        JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan ");
+        System.out.println(ex.getMessage());
     }
 
     return plan;
@@ -72,7 +73,8 @@ public class PlanData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan");
+            System.out.println(ex.getMessage());
         }
     }
     
@@ -90,7 +92,8 @@ public class PlanData {
                 JOptionPane.showMessageDialog(null, "Se modifico el plan con exito");
             }
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan" + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan");
+            System.out.println(ex.getMessage());
             
         }
         
@@ -116,7 +119,8 @@ public class PlanData {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan ");
+            System.out.println(ex.getMessage());
         }
         
         return planes;
@@ -133,7 +137,8 @@ public class PlanData {
             }
             ps.close();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Plan ");
+            System.out.println(ex.getMessage());
         }
     }
       

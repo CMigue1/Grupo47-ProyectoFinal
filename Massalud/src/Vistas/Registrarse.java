@@ -8,6 +8,8 @@ package Vistas;
 import Entidades.Administrativo;
 import javax.swing.JOptionPane;
 import AccesoADatos.AdministrativoData;
+import java.awt.Image;
+import java.awt.Toolkit;
 /**
  *
  * @author pauli
@@ -21,6 +23,11 @@ public class Registrarse extends javax.swing.JFrame {
         initComponents();
         admData = new AdministrativoData();
         
+    }
+     @Override
+   public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/iconoMARCA-01.png"));
+        return retValue;
     }
 
     @SuppressWarnings("unchecked")
@@ -37,12 +44,12 @@ public class Registrarse extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jTApellido = new javax.swing.JTextField();
         fondo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         BarraSuperior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
@@ -106,11 +113,6 @@ public class Registrarse extends javax.swing.JFrame {
         jTUsuario1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTUsuario1.setForeground(new java.awt.Color(255, 255, 255));
         jTUsuario1.setBorder(null);
-        jTUsuario1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTUsuario1MouseClicked(evt);
-            }
-        });
         getContentPane().add(jTUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 360, 20));
 
         txtNombre.setBackground(new java.awt.Color(28, 28, 77));
@@ -128,12 +130,6 @@ public class Registrarse extends javax.swing.JFrame {
         fondo.setForeground(new java.awt.Color(255, 255, 255));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/registarse-01.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1280, 740));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 433, 420, 50));
 
         BarraSuperior.setPreferredSize(new java.awt.Dimension(1030, 50));
         BarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -169,10 +165,6 @@ public class Registrarse extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_BarraSuperiorMousePressed
-
-    private void jTUsuario1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTUsuario1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTUsuario1MouseClicked
 
     private void jBregistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregistrarmeActionPerformed
            try {
@@ -246,11 +238,9 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JButton jBregistrarme;
     private javax.swing.JLabel jLSalirdeInterfaz2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTApellido;
     private javax.swing.JPasswordField jTContrasena1;
     private javax.swing.JTextField jTUsuario1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

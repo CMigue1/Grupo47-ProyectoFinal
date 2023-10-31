@@ -17,13 +17,9 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         this.principal = principal;
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
-        bui.setNorthPane(null);
-   
-        
+        bui.setNorthPane(null);    
     }
 
- 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,9 +28,6 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         Plan = new javax.swing.JLabel();
         nombreCompleto = new javax.swing.JLabel();
         nroAfiliado = new javax.swing.JLabel();
-        jBguardarCarnet = new javax.swing.JButton();
-        jBregresarlatIzq = new javax.swing.JButton();
-        jBregresarlatDer1 = new javax.swing.JButton();
         jBregresar = new javax.swing.JButton();
         jLfondoVista = new javax.swing.JLabel();
 
@@ -63,40 +56,6 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         nroAfiliado.setText("00 3742 596 40");
         getContentPane().add(nroAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(312, 310, 210, 40));
 
-        jBguardarCarnet.setBackground(new java.awt.Color(255, 255, 255));
-        jBguardarCarnet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Bguardar-01.png"))); // NOI18N
-        jBguardarCarnet.setBorder(null);
-        jBguardarCarnet.setBorderPainted(false);
-        jBguardarCarnet.setContentAreaFilled(false);
-        jBguardarCarnet.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BGuardarIN-01.png"))); // NOI18N
-        jBguardarCarnet.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/BGuardarIN-01.png"))); // NOI18N
-        jBguardarCarnet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBguardarCarnetActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBguardarCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 150, 60));
-
-        jBregresarlatIzq.setBorder(null);
-        jBregresarlatIzq.setBorderPainted(false);
-        jBregresarlatIzq.setContentAreaFilled(false);
-        jBregresarlatIzq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBregresarlatIzqActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBregresarlatIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 690));
-
-        jBregresarlatDer1.setBorder(null);
-        jBregresarlatDer1.setBorderPainted(false);
-        jBregresarlatDer1.setContentAreaFilled(false);
-        jBregresarlatDer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBregresarlatDer1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBregresarlatDer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 6, 300, 690));
-
         jBregresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/BREGRESARoff-01.png"))); // NOI18N
         jBregresar.setBorder(null);
         jBregresar.setBorderPainted(false);
@@ -120,30 +79,15 @@ public class CrearCarnet extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBguardarCarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCarnetActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBguardarCarnetActionPerformed
-
-    private void jBregresarlatIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatIzqActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBregresarlatIzqActionPerformed
-
-    private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBregresarlatDer1ActionPerformed
-
     private void jBregresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarActionPerformed
-        // TODO add your handling code here:
+        VistaAfiliado vistaAfiliado = new VistaAfiliado(principal);
+        principal.agregarComponenteAlEscritorio(vistaAfiliado);
     }//GEN-LAST:event_jBregresarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Plan;
     private javax.swing.JLabel VENCIMIENTO;
-    private javax.swing.JButton jBguardarCarnet;
     private javax.swing.JButton jBregresar;
-    private javax.swing.JButton jBregresarlatDer1;
-    private javax.swing.JButton jBregresarlatIzq;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JLabel nombreCompleto;
     private javax.swing.JLabel nroAfiliado;

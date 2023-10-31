@@ -2,7 +2,6 @@
 package Vistas;
 
 import AccesoADatos.Conexion;
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.Connection;
@@ -10,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 
 public class Login extends javax.swing.JFrame {
@@ -82,11 +80,6 @@ public class Login extends javax.swing.JFrame {
         jTUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jTUsuario.setBorder(null);
         jTUsuario.setSelectedTextColor(new java.awt.Color(255, 255, 255));
-        jTUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTUsuarioMouseClicked(evt);
-            }
-        });
         getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 360, 20));
 
         jTContrasena.setBackground(new java.awt.Color(29, 28, 77));
@@ -183,10 +176,6 @@ public class Login extends javax.swing.JFrame {
         }
                    
     }//GEN-LAST:event_jBLoginActionPerformed
-
-    private void jTUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTUsuarioMouseClicked
-
-    }//GEN-LAST:event_jTUsuarioMouseClicked
 
     private void jBregistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregistrarmeActionPerformed
         Registrarse registrarse = new Registrarse();

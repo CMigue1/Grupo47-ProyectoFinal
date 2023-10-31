@@ -12,9 +12,10 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     private DefaultTableModel modelo = new DefaultTableModel();
 
     private Principal principal;
-    private VistaOrden orden;    
+    private VistaOrden orden;
     private OrdenData ordenData;
     private Orden ordenes;
+
     public BuscarOrdenPrestador(Principal principal) {
 
         initComponents();
@@ -117,9 +118,6 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBvolverActionPerformed
 
     private void jBuscarAfiliadoporIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarAfiliadoporIDActionPerformed
-        // TODO add your handling code here:
-        
-         // TODO add your handling code here:
         String texto = jTidPrestador.getText();
         if (!texto.isEmpty()) {
             try {
@@ -128,7 +126,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
                 modelo.setRowCount(0); // Limpia la tabla
 
                 for (Orden orden : ordenes) {
-                    modelo.addRow(new Object[]{orden.getIdOrden(),orden.getFecha(), orden.getFormaPago(), orden.getImporte(), (orden.getAfiliado().getNombre() + " " + orden.getAfiliado().getApellido()), (orden.getPrestador().getNombre() + " " + orden.getPrestador().getApellido())});
+                    modelo.addRow(new Object[]{orden.getIdOrden(), orden.getFecha(), orden.getFormaPago(), orden.getImporte(), (orden.getAfiliado().getNombre() + " " + orden.getAfiliado().getApellido()), (orden.getPrestador().getNombre() + " " + orden.getPrestador().getApellido())});
                 }
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Ingrese un valor numérico válido en el campo.");
@@ -136,7 +134,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "El campo está vacío. Ingrese un valor para buscar.");
         }
-        
+
     }//GEN-LAST:event_jBuscarAfiliadoporIDActionPerformed
 
 
@@ -150,8 +148,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel texto;
     // End of variables declaration//GEN-END:variables
 
-    private void armarCabecera() {
-        //Orden(LocalDate fecha, String formaPago, double importe, Afiliado afiliado, Prestador prestador) 
+    private void armarCabecera() {        
         modelo.addColumn("Orden Nro");
         modelo.addColumn("Fecha");
         modelo.addColumn("Forma de Pago");
