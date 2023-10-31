@@ -753,7 +753,7 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         btnGuardarPr.setVisible(true);
         btnEditarPr.setVisible(false);
-        txtMatriculaPr.setEditable(true);
+        
         txtNombrePr.setEditable(true);
         txtApellidoPr.setEditable(true);
         txtDniPr.setEditable(true);
