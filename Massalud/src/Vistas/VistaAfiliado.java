@@ -49,6 +49,12 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jTtelefono = new javax.swing.JTextField();
         jTNombre = new javax.swing.JTextField();
         jTApellido1 = new javax.swing.JTextField();
@@ -78,10 +84,39 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1062, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Apellido");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, -1, 40));
+
+        jLabel3.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Documento");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, -1, 40));
+
+        jLabel4.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Plan");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, -1, 40));
+
+        jLabel5.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("Domicilio");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 420, -1, 40));
+
+        jLabel6.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel6.setText("Nro de Celular");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, 40));
+
+        jLabel8.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel8.setText("Nombre");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, -1, 40));
+
         jTtelefono.setBackground(new java.awt.Color(255, 255, 255));
         jTtelefono.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTtelefono.setForeground(new java.awt.Color(153, 153, 153));
-        jTtelefono.setText("Telefono");
         jTtelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTtelefono.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,48 +128,49 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTtelefonoActionPerformed(evt);
             }
         });
-        jPanel1.add(jTtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 290, 30));
+        jPanel1.add(jTtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 290, 30));
 
         jTNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTNombre.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTNombre.setForeground(new java.awt.Color(153, 153, 153));
-        jTNombre.setText("Nombre");
         jTNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTNombreMouseClicked(evt);
             }
         });
-        jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 180, 290, 30));
+        jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 290, 30));
 
         jTApellido1.setBackground(new java.awt.Color(255, 255, 255));
         jTApellido1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTApellido1.setForeground(new java.awt.Color(153, 153, 153));
-        jTApellido1.setText("Apellido");
         jTApellido1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTApellido1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTApellido1MouseClicked(evt);
             }
         });
-        jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 290, 30));
+        jTApellido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTApellido1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 290, 30));
 
         jTdocumento.setBackground(new java.awt.Color(255, 255, 255));
         jTdocumento.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdocumento.setForeground(new java.awt.Color(153, 153, 153));
-        jTdocumento.setText("Documento");
         jTdocumento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTdocumento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTdocumentoMouseClicked(evt);
             }
         });
-        jPanel1.add(jTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 270, 290, 30));
+        jPanel1.add(jTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 290, 30));
 
         jTdireccion.setBackground(new java.awt.Color(255, 255, 255));
         jTdireccion.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdireccion.setForeground(new java.awt.Color(153, 153, 153));
-        jTdireccion.setText("Direccion");
         jTdireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTdireccion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -146,7 +182,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTdireccionActionPerformed(evt);
             }
         });
-        jPanel1.add(jTdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 370, 290, 30));
+        jPanel1.add(jTdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 290, 30));
 
         jCPlan1.setBackground(new java.awt.Color(255, 255, 255));
         jCPlan1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
@@ -158,7 +194,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jCPlan1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 290, 30));
+        jPanel1.add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 290, 30));
 
         jCBPlan.setToolTipText("");
         jCBPlan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -313,15 +349,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
             }
             Afiliado afiliado = new Afiliado(nombre, apellido, domicilio, dni, telefono, plan, true);
             afilData.altaAfilidado(afiliado);
-            jTNombre.setText("   Nombre");
-            jTApellido1.setText("  Apellido");
-            jTdocumento.setText("   Nro de Documento");
-            jTtelefono.setText("   Telefono");
-            jTdireccion.setText("   Domicilio");
-            jCPlan1.setSelectedIndex(0);
-            CargaExitosa cE = new CargaExitosa(principal);
-            principal.agregarComponenteAlEscritorio(cE);
-            mostrarAlerta();
+            
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -342,116 +370,42 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_afilActivosActionPerformed
 
     private void jTNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTNombreMouseClicked
-        // TODO add your handling code here:
-        if (jTNombre.getText().trim().equals("Nombre")) {
-
-            jTNombre.setText("");
-            jTNombre.setForeground(Color.black);
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-            jTApellido1.setForeground(Color.gray);
-        }
-        if (jTdocumento.getText().isEmpty()) {
-            jTdocumento.setText("Documento");
-            jTdocumento.setForeground(Color.gray);
-        }
-        if (jTdireccion.getText().isEmpty()) {
-            jTdireccion.setText("Direccion");
-            jTdireccion.setForeground(Color.gray);
-        }
-        if (jTtelefono.getText().isEmpty()) {
-            jTtelefono.setText("Telefono");
-            jTtelefono.setForeground(Color.gray);
-        }
+      
 
     }//GEN-LAST:event_jTNombreMouseClicked
 
     private void jBlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimpiarActionPerformed
         // TODO add your handling code here:
-        jTNombre.setText("   Nombre");
-        jTApellido1.setText("  Apellido");
-        jTdocumento.setText("   Nro de Documento");
-        jTtelefono.setText("   Telefono");
-        jTdireccion.setText("   Domicilio");
+        jTNombre.setText("");
+        jTApellido1.setText("");
+        jTdocumento.setText("");
+        jTtelefono.setText("");
+        jTdireccion.setText("");
         jCPlan1.setSelectedIndex(0);
     }//GEN-LAST:event_jBlimpiarActionPerformed
 
     private void jTApellido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTApellido1MouseClicked
-        if (jTApellido1.getText().trim().equals("Apellido")) {
-            jTApellido1.setText("");
-            jTApellido1.setForeground(Color.black);
-        }
-        if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-            jTNombre.setForeground(Color.gray);
-        }
-        if (jTdocumento.getText().isEmpty()) {
-            jTdocumento.setText("Documento");
-            jTdocumento.setForeground(Color.gray);
-        }
-        if (jTdireccion.getText().isEmpty()) {
-            jTdireccion.setText("Direccion");
-            jTdireccion.setForeground(Color.gray);
-        }
-        if (jTtelefono.getText().isEmpty()) {
-            jTtelefono.setText("Telefono");
-            jTtelefono.setForeground(Color.gray);
-        }
+    
+        
 
     }//GEN-LAST:event_jTApellido1MouseClicked
 
     private void jTdocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdocumentoMouseClicked
-        if (jTdocumento.getText().trim().equals("Documento")) {
-            jTdocumento.setText("");
-            jTdocumento.setForeground(Color.black);
-        }
-        if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-            jTNombre.setForeground(Color.gray);
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-            jTApellido1.setForeground(Color.gray);
-        }
-        if (jTdireccion.getText().isEmpty()) {
-            jTdireccion.setText("Direccion");
-            jTdireccion.setForeground(Color.gray);
-        }
-        if (jTtelefono.getText().isEmpty()) {
-            jTtelefono.setText("Telefono");
-            jTtelefono.setForeground(Color.gray);
-        }
-
+    
 
     }//GEN-LAST:event_jTdocumentoMouseClicked
 
     private void jTdireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdireccionMouseClicked
-        if (jTdireccion.getText().trim().equals("Direccion")) {
-            jTdireccion.setText("");
-            jTdireccion.setForeground(Color.black);
-        }
-        if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-            jTNombre.setForeground(Color.gray);
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-            jTApellido1.setForeground(Color.gray);
-        }
-        if (jTdocumento.getText().isEmpty()) {
-            jTdocumento.setText("Documento");
-            jTdocumento.setForeground(Color.gray);
-        }
-        if (jTtelefono.getText().isEmpty()) {
-            jTtelefono.setText("Telefono");
-            jTtelefono.setForeground(Color.gray);
-        }
+       
     }//GEN-LAST:event_jTdireccionMouseClicked
 
     private void jTtelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTtelefonoMouseClicked
 
     }//GEN-LAST:event_jTtelefonoMouseClicked
+
+    private void jTApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTApellido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTApellido1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton afilActivos;
@@ -462,6 +416,12 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<Plan> jCBPlan;
     private javax.swing.JComboBox<Plan> jCPlan1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -524,14 +484,5 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         }
     }
 
-    private void mostrarAlerta() {
-        CargaExitosa cE = new CargaExitosa(principal);
-        principal.agregarComponenteAlEscritorio(cE);
-
-        cE.setVisible(true);
-        
-        cE.moveToFront();
-
-    }
 
 }

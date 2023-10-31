@@ -6,7 +6,6 @@ package AccesoADatos;
 
 import Entidades.Afiliado;
 import Entidades.Plan;
-import Vistas.CargaExitosa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

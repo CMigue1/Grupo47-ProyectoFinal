@@ -40,6 +40,12 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jCmostrarEspecialidades = new javax.swing.JComboBox<>();
         jTtelefono1 = new javax.swing.JTextField();
         jTNombre = new javax.swing.JTextField();
@@ -57,6 +63,8 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTPrestadores = new javax.swing.JTable();
         jLfondoVista = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTPrestadores1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setInheritsPopupMenu(true);
@@ -68,6 +76,36 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1120, 720));
         jPanel1.setPreferredSize(new java.awt.Dimension(1062, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setText("Apellido");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, 40));
+
+        jLabel13.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel13.setText("Documento");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, 40));
+
+        jLabel14.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel14.setText("Especialidad");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, -1, 40));
+
+        jLabel15.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel15.setText("Domicilio");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, -1, 40));
+
+        jLabel16.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("Nro de Celular");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, -1, 40));
+
+        jLabel17.setFont(new java.awt.Font("Montserrat SemiBold", 1, 10)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("Nombre");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, -1, 40));
 
         jCmostrarEspecialidades.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jCmostrarEspecialidades.setToolTipText("Tipo de Plan");
@@ -82,9 +120,9 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jCmostrarEspecialidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 210, -1));
 
+        jTtelefono1.setBackground(new java.awt.Color(246, 246, 248));
         jTtelefono1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTtelefono1.setForeground(new java.awt.Color(153, 153, 153));
-        jTtelefono1.setText("Telefono");
         jTtelefono1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTtelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,11 +134,11 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
                 jTtelefono1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTtelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 290, 30));
+        jPanel1.add(jTtelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 290, 30));
 
+        jTNombre.setBackground(new java.awt.Color(246, 246, 248));
         jTNombre.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTNombre.setForeground(new java.awt.Color(153, 153, 153));
-        jTNombre.setText("Nombre");
         jTNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -114,9 +152,9 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         });
         jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 290, 30));
 
+        jTApellido1.setBackground(new java.awt.Color(246, 246, 248));
         jTApellido1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTApellido1.setForeground(new java.awt.Color(153, 153, 153));
-        jTApellido1.setText("Apellido");
         jTApellido1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTApellido1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,11 +166,11 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
                 jTApellido1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 290, 30));
+        jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 290, 30));
 
+        jTdocumento1.setBackground(new java.awt.Color(246, 246, 248));
         jTdocumento1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdocumento1.setForeground(new java.awt.Color(153, 153, 153));
-        jTdocumento1.setText("Documento");
         jTdocumento1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTdocumento1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,11 +182,11 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
                 jTdocumento1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTdocumento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 290, 30));
+        jPanel1.add(jTdocumento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 290, 30));
 
+        jTdireccion2.setBackground(new java.awt.Color(246, 246, 248));
         jTdireccion2.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdireccion2.setForeground(new java.awt.Color(153, 153, 153));
-        jTdireccion2.setText("Direccion");
         jTdireccion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
         jTdireccion2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -160,13 +198,14 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
                 jTdireccion2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTdireccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 290, 30));
+        jPanel1.add(jTdireccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 290, 30));
 
+        jCEspecialidad.setBackground(new java.awt.Color(246, 246, 248));
         jCEspecialidad.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jCEspecialidad.setForeground(new java.awt.Color(153, 153, 153));
         jCEspecialidad.setToolTipText("");
         jCEspecialidad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jPanel1.add(jCEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 290, 30));
+        jPanel1.add(jCEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, 290, 30));
 
         jBagregarPrestador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcAGREGARoff-01.png"))); // NOI18N
         jBagregarPrestador.setBorder(null);
@@ -219,8 +258,8 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jBmiPerfil.setBorder(null);
         jBmiPerfil.setBorderPainted(false);
         jBmiPerfil.setContentAreaFilled(false);
-        jBmiPerfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcUSER-01.png"))); // NOI18N
-        jBmiPerfil.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BcUSER-01.png"))); // NOI18N
+        jBmiPerfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/USERin-01.png"))); // NOI18N
+        jBmiPerfil.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/USERin-01.png"))); // NOI18N
         jBmiPerfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBmiPerfilActionPerformed(evt);
@@ -262,10 +301,26 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, 440));
 
+        jLfondoVista.setBackground(new java.awt.Color(246, 246, 248));
         jLfondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/VISTAprestadores-01.png"))); // NOI18N
         jLfondoVista.setPreferredSize(new java.awt.Dimension(1062, 720));
         jLfondoVista.setRequestFocusEnabled(false);
         jPanel1.add(jLfondoVista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1062, 740));
+
+        jTPrestadores1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTPrestadores1);
+
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 420, 440));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1062, 720));
         jPanel1.getAccessibleContext().setAccessibleName("");
@@ -469,14 +524,22 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBmiPerfil;
     private javax.swing.JComboBox<Especialidad> jCEspecialidad;
     private javax.swing.JComboBox<Especialidad> jCmostrarEspecialidades;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLespecialidad;
     private javax.swing.JLabel jLfondoVista;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRPrestadoresActivos;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTApellido1;
     private javax.swing.JTextField jTNombre;
     private javax.swing.JTable jTPrestadores;
+    private javax.swing.JTable jTPrestadores1;
     private javax.swing.JTextField jTdireccion2;
     private javax.swing.JTextField jTdocumento1;
     private javax.swing.JTextField jTtelefono1;

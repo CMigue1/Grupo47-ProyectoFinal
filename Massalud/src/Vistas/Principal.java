@@ -1,4 +1,3 @@
-
 package Vistas;
 
 import javax.swing.JInternalFrame;
@@ -7,19 +6,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class Principal extends javax.swing.JFrame {
 
     int xMouse, yMouse;
-    
-    
 
     public Principal() {
         initComponents();
         establecerFondoEscritorio();
 
         // ... Resto del código ...
-
         // Cargar la imagen para el clic del botón
 //        ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
 //
@@ -37,10 +32,7 @@ public class Principal extends javax.swing.JFrame {
 ////         jBPrestadores.setIcon(nuevaImagen);
 //        }
 //    });
-}
-  
-    
-    
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -58,6 +50,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Pantalla = new javax.swing.JPanel();
         Escritorio = new javax.swing.JDesktopPane();
+        jLabel2 = new javax.swing.JLabel();
         BarraSuperior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -196,15 +189,28 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Escritorio.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
+        jLabel2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Grupo47 ®");
+        jLabel2.setToolTipText("");
+
+        Escritorio.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1062, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addContainerGap(978, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(19, 19, 19))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addContainerGap(689, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(16, 16, 16))
         );
 
         Pantalla.add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 1062, 720));
@@ -302,7 +308,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarActionPerformed
 
     private void jBCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarMouseClicked
-     System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jBCerrarMouseClicked
 
     private void jBCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBCerrarSesionMouseClicked
@@ -310,15 +316,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCerrarSesionMouseClicked
 
     private void jBCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCerrarSesionActionPerformed
-        // TODO add your handling code here:
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_jBCerrarSesionActionPerformed
 
     private void jBPrestadoresMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMousePressed
-    
+
     }//GEN-LAST:event_jBPrestadoresMousePressed
 
     private void jBPrestadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBPrestadoresMouseClicked
-          // Cargar la imagen para el clic del botón
+        // Cargar la imagen para el clic del botón
         ImageIcon clicIcon = new ImageIcon(getClass().getResource("/img/prestadoresIN-01.png"));
 
         // Asociar la imagen al botón
@@ -333,7 +342,6 @@ public class Principal extends javax.swing.JFrame {
         Escritorio.add(consulta);
         Escritorio.moveToFront(consulta);
     }//GEN-LAST:event_jBConsultasActionPerformed
-
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -411,6 +419,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jBPlanes;
     private javax.swing.JButton jBPrestadores;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 

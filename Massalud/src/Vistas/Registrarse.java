@@ -32,6 +32,7 @@ public class Registrarse extends javax.swing.JFrame {
         jBLogin = new javax.swing.JButton();
         jBregistrarme = new javax.swing.JButton();
         jTContrasena1 = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
         jTUsuario1 = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         jTApellido = new javax.swing.JTextField();
@@ -39,8 +40,6 @@ public class Registrarse extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         BarraSuperior = new javax.swing.JPanel();
-        jTUsuario = new javax.swing.JTextField();
-        jTContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -65,7 +64,7 @@ public class Registrarse extends javax.swing.JFrame {
                 jBlogin2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBlogin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(206, 310, 120, 20));
+        getContentPane().add(jBlogin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 120, 20));
 
         jBLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/loginSECUNDARIO-01.png"))); // NOI18N
         jBLogin.setBorder(null);
@@ -90,16 +89,41 @@ public class Registrarse extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBregistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 220, 50));
-        getContentPane().add(jTContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 260, -1));
 
+        jTContrasena1.setBackground(new java.awt.Color(28, 29, 77));
+        jTContrasena1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jTContrasena1.setForeground(new java.awt.Color(255, 255, 255));
+        jTContrasena1.setBorder(null);
+        getContentPane().add(jTContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 370, 20));
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Grupo47 ®");
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 690, -1, -1));
+
+        jTUsuario1.setBackground(new java.awt.Color(28, 29, 77));
+        jTUsuario1.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jTUsuario1.setForeground(new java.awt.Color(255, 255, 255));
+        jTUsuario1.setBorder(null);
         jTUsuario1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTUsuario1MouseClicked(evt);
             }
         });
-        getContentPane().add(jTUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, 260, -1));
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 150, -1));
-        getContentPane().add(jTApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 150, -1));
+        getContentPane().add(jTUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 360, 20));
+
+        txtNombre.setBackground(new java.awt.Color(28, 28, 77));
+        txtNombre.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombre.setBorder(null);
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 150, 20));
+
+        jTApellido.setBackground(new java.awt.Color(34, 35, 81));
+        jTApellido.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jTApellido.setForeground(new java.awt.Color(255, 255, 255));
+        jTApellido.setBorder(null);
+        getContentPane().add(jTApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, 150, 20));
 
         fondo.setForeground(new java.awt.Color(255, 255, 255));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/registarse-01.png"))); // NOI18N
@@ -125,14 +149,6 @@ public class Registrarse extends javax.swing.JFrame {
         BarraSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(BarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 50));
 
-        jTUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTUsuarioMouseClicked(evt);
-            }
-        });
-        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 200, -1));
-        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 200, -1));
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -154,22 +170,18 @@ public class Registrarse extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_BarraSuperiorMousePressed
 
-    private void jTUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTUsuarioMouseClicked
-
-    }//GEN-LAST:event_jTUsuarioMouseClicked
-
     private void jTUsuario1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTUsuario1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jTUsuario1MouseClicked
 
     private void jBregistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregistrarmeActionPerformed
            try {
-            String usuario = jTUsuario.getText().trim();
-            String contrasena = jTContrasena.getText().trim();
+            String usuario = jTUsuario1.getText().trim();
+            String contrasena = jTContrasena1.getText().trim();
             String nombre= txtNombre.getText().trim();
             String apellido= jTApellido.getText().trim();
 
-            if (jTUsuario.getText().isEmpty() || jTContrasena.getText().isEmpty() || txtNombre.getText().isEmpty()|| jTApellido.getText().isEmpty()) {
+            if (jTUsuario1.getText().isEmpty() || jTContrasena1.getText().isEmpty() || txtNombre.getText().isEmpty()|| jTApellido.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No debe haber campos vacios");
                 return;
             }
@@ -233,11 +245,10 @@ public class Registrarse extends javax.swing.JFrame {
     private javax.swing.JButton jBlogin2;
     private javax.swing.JButton jBregistrarme;
     private javax.swing.JLabel jLSalirdeInterfaz2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTApellido;
-    private javax.swing.JPasswordField jTContrasena;
     private javax.swing.JPasswordField jTContrasena1;
-    private javax.swing.JTextField jTUsuario;
     private javax.swing.JTextField jTUsuario1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtNombre;

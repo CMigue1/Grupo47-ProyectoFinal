@@ -11,6 +11,7 @@ import Entidades.Especialidad;
 import Entidades.Orden;
 import Entidades.Plan;
 import Entidades.Prestador;
+import Vistas.Login;
 import java.util.Scanner;
 
 public class Main {
@@ -31,6 +32,9 @@ public class Main {
         OrdenData ordenData = new OrdenData();
         EspecialidadData espeData = new EspecialidadData();
         PlanData planData = new PlanData();
+        
+        
+        Login login =new Login();
         
         
         // Prueba de Metodos de PlanData
@@ -62,11 +66,15 @@ public class Main {
 //        plan = planData.buscarPlanPorId(4);
 //        System.out.println(afilData.buscarAfiliadosPorPlan(plan.getIdPlan()));
 
-        System.out.println(ordenData.buscarOrdenPorAfiliado(1));
+     //   System.out.println(ordenData.buscarOrdenPorAfiliado(1));
         
         
         
-        
+         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
        
         
 

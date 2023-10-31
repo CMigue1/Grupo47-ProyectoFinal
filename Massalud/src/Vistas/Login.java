@@ -3,6 +3,8 @@ package Vistas;
 
 import AccesoADatos.Conexion;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,12 +19,14 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.principal= principal;
-        JTextField jTContrasen=new JTextField();
-        jTContrasen.setOpaque(false);
-        jTContrasen.setForeground(Color.white);
-        JTextField jTUsuari=new JTextField();
-        jTUsuari.setOpaque(false);
+       
         
+    }
+    
+    @Override
+   public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/iconoMARCA-01.png"));
+        return retValue;
     }
 
   
@@ -36,10 +40,12 @@ public class Login extends javax.swing.JFrame {
         jTUsuario = new javax.swing.JTextField();
         jTContrasena = new javax.swing.JPasswordField();
         jBregistrarme = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
         BarraSuperior = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +64,7 @@ public class Login extends javax.swing.JFrame {
         jBregistrase2.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
         jBregistrase2.setBorder(null);
         jBregistrase2.setContentAreaFilled(false);
-        getContentPane().add(jBregistrase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 380, 80, 30));
+        getContentPane().add(jBregistrase2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 80, 30));
 
         jBLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/loginOFF-01.png"))); // NOI18N
         jBLogin.setBorder(null);
@@ -71,15 +77,24 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(jBLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, 220, 60));
 
-        jTUsuario.setBackground(null);
+        jTUsuario.setBackground(new java.awt.Color(29, 28, 77));
+        jTUsuario.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jTUsuario.setForeground(new java.awt.Color(255, 255, 255));
         jTUsuario.setBorder(null);
+        jTUsuario.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         jTUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTUsuarioMouseClicked(evt);
             }
         });
-        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 434, 420, 50));
-        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 340, -1));
+        getContentPane().add(jTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 360, 20));
+
+        jTContrasena.setBackground(new java.awt.Color(29, 28, 77));
+        jTContrasena.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
+        jTContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        jTContrasena.setBorder(null);
+        jTContrasena.setSelectedTextColor(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 520, 360, -1));
 
         jBregistrarme.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/CrearcuentaSECUNDARIO-01.png"))); // NOI18N
         jBregistrarme.setBorder(null);
@@ -91,6 +106,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBregistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 570, 220, 50));
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Grupo47 ®");
+        jLabel1.setToolTipText("");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 690, -1, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/iniciarSesion-01.png"))); // NOI18N
         getContentPane().add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1280, 740));
@@ -173,9 +194,7 @@ public class Login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jBregistrarmeActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -215,6 +234,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jBregistrarme;
     private javax.swing.JButton jBregistrase2;
     private javax.swing.JLabel jLSalirdeInterfaz2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jTContrasena;
     private javax.swing.JTextField jTUsuario;
     // End of variables declaration//GEN-END:variables
