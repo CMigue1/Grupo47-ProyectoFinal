@@ -797,6 +797,11 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             }
             Afiliado afiliado = new Afiliado(idAfiliado, nombre, apellido, domicilio, dni, telefono, plan, estado);
             afilData.modificarAfiliado(afiliado);
+            
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }finally{
             txtIdAfiliado.setEditable(false);
             txtNombreAf.setEditable(false);
             txtApellidoAf.setEditable(false);
@@ -805,9 +810,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             txtDomicilioAf.setEditable(false);
             jCPlan1.setEnabled(false);
             cbxEstadoAf.setEnabled(false);
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_btnGuardadAfActionPerformed
@@ -846,6 +848,12 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             }
             Prestador prestador = new Prestador(idPrestador, nombre, apellido, domicilio, dni, telefono, especialidad, estado);
             presData.modificarPrestador(prestador);
+            
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
+        }finally{
+            
             txtMatriculaPr.setEditable(false);
             txtNombrePr.setEditable(false);
             txtApellidoPr.setEditable(false);
@@ -853,9 +861,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
             txtDomicilioPr.setEditable(false);
             cbxEspecialidad.setEnabled(false);
             cbxEstadoPr.setEnabled(false);
-
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGuardarPrActionPerformed
     public int validarEntero(String texto) throws NumberFormatException {
