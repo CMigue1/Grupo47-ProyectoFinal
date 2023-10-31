@@ -150,11 +150,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         txtNroAfiliado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         txtNroAfiliado.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         txtNroAfiliado.setSelectionColor(new java.awt.Color(0, 0, 56));
-        txtNroAfiliado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNroAfiliadoActionPerformed(evt);
-            }
-        });
         getContentPane().add(txtNroAfiliado, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 410, 300, 40));
 
         txtMatriculaPrestador.setBackground(new java.awt.Color(246, 246, 248));
@@ -318,10 +313,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_btnCrearActionPerformed
-
-    private void txtNroAfiliadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNroAfiliadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNroAfiliadoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

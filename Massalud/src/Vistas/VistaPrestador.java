@@ -124,80 +124,30 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jTtelefono1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTtelefono1.setForeground(new java.awt.Color(153, 153, 153));
         jTtelefono1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTtelefono1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTtelefono1MouseClicked(evt);
-            }
-        });
-        jTtelefono1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTtelefono1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTtelefono1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 290, 30));
 
         jTNombre.setBackground(new java.awt.Color(246, 246, 248));
         jTNombre.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTNombre.setForeground(new java.awt.Color(153, 153, 153));
         jTNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTNombre.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTNombreMouseClicked(evt);
-            }
-        });
-        jTNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTNombreActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 290, 30));
 
         jTApellido1.setBackground(new java.awt.Color(246, 246, 248));
         jTApellido1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTApellido1.setForeground(new java.awt.Color(153, 153, 153));
         jTApellido1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTApellido1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTApellido1MouseClicked(evt);
-            }
-        });
-        jTApellido1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTApellido1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTApellido1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 260, 290, 30));
 
         jTdocumento1.setBackground(new java.awt.Color(246, 246, 248));
         jTdocumento1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdocumento1.setForeground(new java.awt.Color(153, 153, 153));
         jTdocumento1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTdocumento1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTdocumento1MouseClicked(evt);
-            }
-        });
-        jTdocumento1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdocumento1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTdocumento1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 290, 30));
 
         jTdireccion2.setBackground(new java.awt.Color(246, 246, 248));
         jTdireccion2.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdireccion2.setForeground(new java.awt.Color(153, 153, 153));
         jTdireccion2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTdireccion2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTdireccion2MouseClicked(evt);
-            }
-        });
-        jTdireccion2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdireccion2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTdireccion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 290, 30));
 
         jCEspecialidad.setBackground(new java.awt.Color(246, 246, 248));
@@ -260,11 +210,6 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         jBmiPerfil.setContentAreaFilled(false);
         jBmiPerfil.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/USERin-01.png"))); // NOI18N
         jBmiPerfil.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/USERin-01.png"))); // NOI18N
-        jBmiPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBmiPerfilActionPerformed(evt);
-            }
-        });
         jPanel1.add(jBmiPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 110, 70, 90));
 
         jRPrestadoresActivos.setBackground(new java.awt.Color(255, 255, 255));
@@ -328,36 +273,12 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBmiPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmiPerfilActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBmiPerfilActionPerformed
-
     private void jBCrearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearOrdenActionPerformed
 
         VistaOrden vistaOrden = new VistaOrden(principal);
         principal.agregarComponenteAlEscritorio(vistaOrden);
 
     }//GEN-LAST:event_jBCrearOrdenActionPerformed
-
-    private void jTtelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefono1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTtelefono1ActionPerformed
-
-    private void jTNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTNombreActionPerformed
-
-    private void jTApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTApellido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTApellido1ActionPerformed
-
-    private void jTdocumento1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdocumento1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdocumento1ActionPerformed
-
-    private void jTdireccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdireccion2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdireccion2ActionPerformed
 
     private void jCmostrarEspecialidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCmostrarEspecialidadesActionPerformed
         // TODO add your handling code here:
@@ -394,11 +315,11 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBagregarPrestadorActionPerformed
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
-        jTNombre.setText("   Nombre");
-        jTApellido1.setText("  Apellido");
-        jTdocumento1.setText("   Nro de Documento");
-        jTtelefono1.setText("   Telefono");
-        jTdireccion2.setText("   Domicilio");
+        jTNombre.setText("");
+        jTApellido1.setText("");
+        jTdocumento1.setText("");
+        jTtelefono1.setText("");
+        jTdireccion2.setText("");
         jCEspecialidad.setSelectedIndex(0);
     }//GEN-LAST:event_jBLimpiarActionPerformed
 
@@ -413,78 +334,6 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jRPrestadoresActivosActionPerformed
 
-    private void jTApellido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTApellido1MouseClicked
-        if (jTApellido1.getText().trim().equals("Apellido")) {
-            jTApellido1.setText("");
-        }
-         if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-        }
-           if (jTdocumento1.getText().isEmpty()) {
-            jTdocumento1.setText("Documento");
-        }
-           if (jTdireccion2.getText().isEmpty()) {
-            jTdireccion2.setText("Domicilio");
-        }
-          if (jTtelefono1.getText().isEmpty()) {
-            jTtelefono1.setText("Telefono");
-        }  
-    }//GEN-LAST:event_jTApellido1MouseClicked
-
-    private void jTdocumento1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdocumento1MouseClicked
-        if (jTdocumento1.getText().trim().equals("Documento")) {
-            jTdocumento1.setText("");
-        }
-         if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-        }
-          if (jTdireccion2.getText().isEmpty()) {
-            jTdireccion2.setText("Domicilio");
-        }
-          if (jTtelefono1.getText().isEmpty()) {
-            jTtelefono1.setText("Telefono");
-        }
-    }//GEN-LAST:event_jTdocumento1MouseClicked
-
-    private void jTdireccion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdireccion2MouseClicked
-        if (jTdireccion2.getText().trim().equals("Domicilio")) {
-            jTdireccion2.setText("");
-        }
-         if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-        }
-          if (jTdocumento1.getText().isEmpty()) {
-            jTdocumento1.setText("Documento");
-        }
-          if (jTtelefono1.getText().isEmpty()) {
-            jTtelefono1.setText("Telefono");
-        }
-    }//GEN-LAST:event_jTdireccion2MouseClicked
-
-    private void jTtelefono1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTtelefono1MouseClicked
-        if(jTtelefono1.getText().trim().equals("Telefono")){
-            jTtelefono1.setText("");
-        }
-        if (jTNombre.getText().isEmpty()) {
-            jTNombre.setText("Nombre");
-        }
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-        }
-        if (jTdireccion2.getText().isEmpty()) {
-            jTdireccion2.setText("Domicilio");
-        }
-        if (jTdocumento1.getText().isEmpty()) {
-            jTdocumento1.setText("Documento");
-        }        
-    }//GEN-LAST:event_jTtelefono1MouseClicked
-
     private void jBLimpiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBLimpiarMouseClicked
         borrarFilaTabla();
         
@@ -497,24 +346,6 @@ public class VistaPrestador extends javax.swing.JInternalFrame {
             
         }
     }//GEN-LAST:event_jBLimpiarMouseClicked
-
-    private void jTNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTNombreMouseClicked
-        if (jTNombre.getText().trim().equals("Nombre")) {
-            jTNombre.setText("");
-        }        
-        if (jTApellido1.getText().isEmpty()) {
-            jTApellido1.setText("Apellido");
-        }
-         if (jTdireccion2.getText().isEmpty()) {
-            jTdireccion2.setText("Domicilio");
-        }
-           if (jTdocumento1.getText().isEmpty()) {
-            jTdocumento1.setText("Nro de documento");
-        }    
-          if (jTtelefono1.getText().isEmpty()) {
-            jTtelefono1.setText("Telefono");
-        }
-    }//GEN-LAST:event_jTNombreMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
