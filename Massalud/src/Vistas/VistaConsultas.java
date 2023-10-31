@@ -738,7 +738,7 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
     private void btnEditarAfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAfActionPerformed
         btnGuardadAf.setVisible(true);
         btnEditarAf.setVisible(false);
-        txtIdAfiliado.setEditable(true);
+        
         txtNombreAf.setEditable(true);
         txtApellidoAf.setEditable(true);
         txtDniAf.setEditable(true);
