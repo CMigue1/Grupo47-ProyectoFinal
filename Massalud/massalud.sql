@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2023 a las 20:37:34
+-- Tiempo de generación: 31-10-2023 a las 16:43:15
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -80,7 +80,7 @@ INSERT INTO `afiliado` (`idAfiliado`, `nombre`, `apellido`, `dni`, `domicilio`, 
 (4, 'Florencia', 'Fernández', 40004444, 'Calle Entre Ríos 222, Mendoza', 2147483647, 4, 1),
 (5, 'Mariano Carlos', 'Díaz', 40005555, 'Av. Santa Fe 555, Rosario', 2147483647, 5, 1),
 (6, 'Lucía', 'López', 40006666, 'Calle Libertad 666, Buenos Aires', 2147483647, 1, 1),
-(7, 'Martín', 'Gómez', 40007777, 'Av. Corrientes 777, Córdoba', 2147483647, 2, 1),
+(7, 'Martín', 'Gómez', 40007777, 'Av. Corrientes 777, Córdoba', 2147483647, 4, 1),
 (8, 'Sofía', 'Suárez', 40008888, 'Calle San Juan 888, Rosario', 2147483647, 3, 1),
 (9, 'Alejandro', 'Martín', 40009999, 'Av. Belgrano 999, Buenos Aires', 2147483647, 4, 1),
 (10, 'Laura', 'Pérez', 40001010, 'Calle Entre Ríos 1010, Mendoza', 1011223344, 5, 1),
@@ -94,7 +94,6 @@ INSERT INTO `afiliado` (`idAfiliado`, `nombre`, `apellido`, `dni`, `domicilio`, 
 (18, 'Luciana', 'García', 40001818, 'Av. Corrientes 1818, Córdoba', 1889900123, 3, 1),
 (19, 'Ezequiel', 'Rodríguez', 40001919, 'Calle San Juan 1919, Buenos Aires', 1990011234, 4, 1),
 (20, 'Victoria', 'López', 40002020, 'Av. Belgrano 2020, Mendoza', 2001122345, 5, 1),
-(21, 'Miguel', 'Carrizo', 42140282, 'Argentina', 123123, 2, 0),
 (22, 'Vanina', 'Hernandez', 12345, 'Argentina', 1223, 5, 1),
 (23, 'Yanina', 'Hernandez', 9876, 'Argentina', 1223, 1, 1),
 (28, 'Maria Fernanda', 'Lopez', 15986422, 'San Martin 410', 123456, 1, 1),
@@ -207,7 +206,11 @@ INSERT INTO `orden` (`idOrden`, `fecha`, `formaPago`, `importe`, `idAfiliado`, `
 (7, '2023-09-29', 'Débito', 250.75, 7, 8),
 (8, '2023-09-30', 'Efectivo', 180.5, 8, 7),
 (9, '2023-10-01', 'Débito', 190.2, 9, 10),
-(10, '2023-10-02', 'Efectivo', 220, 10, 9);
+(10, '2023-10-02', 'Efectivo', 220, 10, 9),
+(11, '2023-10-04', 'Efectivo', 500, 9, 1),
+(12, '2023-10-03', 'efectivo', 123123, 3, 5),
+(13, '2023-10-10', 'Débito', 500, 7, 9),
+(14, '2023-10-31', 'Efectivo', 500, 5, 9);
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,7 @@ INSERT INTO `planes` (`idPlan`, `tipoDePlan`, `precio`, `adherentes`) VALUES
 (2, 'Plan Mas Familia', 100, 4),
 (3, 'Plan Mas Adultos', 80, 2),
 (4, 'Plan Mas Gold', 150, 3),
-(5, 'Plan Premium', 200, 5);
+(5, 'Plan Platinum', 200, 5);
 
 -- --------------------------------------------------------
 
@@ -347,7 +350,7 @@ ALTER TABLE `administrativo`
 -- AUTO_INCREMENT de la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
-  MODIFY `idAfiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idAfiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `especialidad`
@@ -359,7 +362,7 @@ ALTER TABLE `especialidad`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `idOrden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idOrden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `planes`
