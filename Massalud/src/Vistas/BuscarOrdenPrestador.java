@@ -1,6 +1,9 @@
 package Vistas;
 
-import javax.swing.JInternalFrame;
+import AccesoADatos.OrdenData;
+import Entidades.Orden;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 
@@ -9,21 +12,20 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     private DefaultTableModel modelo = new DefaultTableModel();
 
     private Principal principal;
-    private VistaOrden orden;
-    private JInternalFrame currentInternalFrame;
-    
-    
-
+    private VistaOrden orden;    
+    private OrdenData ordenData;
+    private Orden ordenes;
     public BuscarOrdenPrestador(Principal principal) {
 
         initComponents();
         armarCabecera();
-        
+
         this.principal = principal;
+        ordenData = new OrdenData();
+        ordenes = new Orden();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
-           
 
     }
 
@@ -37,8 +39,6 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         jBvolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTPrestadores = new javax.swing.JTable();
-        jBregresarlatIzq = new javax.swing.JButton();
-        jBregresarlatDer1 = new javax.swing.JButton();
         jLfondoVista = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -46,11 +46,9 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
         setPreferredSize(new java.awt.Dimension(1062, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTidPrestador.setEditable(false);
         jTidPrestador.setBackground(new java.awt.Color(247, 247, 249));
         jTidPrestador.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
         jTidPrestador.setForeground(new java.awt.Color(51, 51, 51));
-        jTidPrestador.setText("4555");
         jTidPrestador.setBorder(null);
         jTidPrestador.setSelectedTextColor(new java.awt.Color(0, 0, 0));
         jTidPrestador.setSelectionColor(new java.awt.Color(153, 153, 153));
@@ -86,7 +84,7 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
                 jBvolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jBvolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 50, 40));
+        getContentPane().add(jBvolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 610, 50, 40));
 
         jTPrestadores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -103,26 +101,6 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 189, 410, 400));
 
-        jBregresarlatIzq.setBorder(null);
-        jBregresarlatIzq.setBorderPainted(false);
-        jBregresarlatIzq.setContentAreaFilled(false);
-        jBregresarlatIzq.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBregresarlatIzqActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBregresarlatIzq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 240, 690));
-
-        jBregresarlatDer1.setBorder(null);
-        jBregresarlatDer1.setBorderPainted(false);
-        jBregresarlatDer1.setContentAreaFilled(false);
-        jBregresarlatDer1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBregresarlatDer1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBregresarlatDer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 6, 300, 690));
-
         jLfondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/vistaOrdenporPrestador-01.png"))); // NOI18N
         jLfondoVista.setMaximumSize(new java.awt.Dimension(1062, 720));
         jLfondoVista.setMinimumSize(new java.awt.Dimension(1062, 720));
@@ -134,26 +112,35 @@ public class BuscarOrdenPrestador extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBvolverActionPerformed
- 
+        VistaOrden vistaOrden = new VistaOrden(principal);
+        principal.agregarComponenteAlEscritorio(vistaOrden);
     }//GEN-LAST:event_jBvolverActionPerformed
 
     private void jBuscarAfiliadoporIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarAfiliadoporIDActionPerformed
         // TODO add your handling code here:
+        
+         // TODO add your handling code here:
+        String texto = jTidPrestador.getText();
+        if (!texto.isEmpty()) {
+            try {
+                int idPrestador = Integer.parseInt(texto);
+                List<Orden> ordenes = ordenData.buscarOrdenPorPrestador(idPrestador);
+                modelo.setRowCount(0); // Limpia la tabla
+
+                for (Orden orden : ordenes) {
+                    modelo.addRow(new Object[]{orden.getIdOrden(),orden.getFecha(), orden.getFormaPago(), orden.getImporte(), (orden.getAfiliado().getNombre() + " " + orden.getAfiliado().getApellido()), (orden.getPrestador().getNombre() + " " + orden.getPrestador().getApellido())});
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Ingrese un valor numérico válido en el campo.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "El campo está vacío. Ingrese un valor para buscar.");
+        }
+        
     }//GEN-LAST:event_jBuscarAfiliadoporIDActionPerformed
-
-    private void jBregresarlatIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatIzqActionPerformed
-
-    }//GEN-LAST:event_jBregresarlatIzqActionPerformed
-
-    private void jBregresarlatDer1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBregresarlatDer1ActionPerformed
-
-
-    }//GEN-LAST:event_jBregresarlatDer1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBregresarlatDer1;
-    private javax.swing.JButton jBregresarlatIzq;
     private javax.swing.JButton jBuscarAfiliadoporID;
     private javax.swing.JButton jBvolver;
     private javax.swing.JLabel jLfondoVista;

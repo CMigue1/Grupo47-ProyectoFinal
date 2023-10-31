@@ -39,8 +39,8 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         BasicInternalFrameUI bui = (BasicInternalFrameUI) this.getUI();
         bui.setNorthPane(null);
         this.setSize(1062, 720);
+
         armarCabecera();
-        
 
     }
 
@@ -48,9 +48,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jBsalirMENSAJE = new javax.swing.JButton();
-        jLMENSAJEexitoso = new javax.swing.JLabel();
-        jLfondoalert = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jTtelefono = new javax.swing.JTextField();
         jTNombre = new javax.swing.JTextField();
@@ -75,21 +72,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(1000, 720));
         setPreferredSize(new java.awt.Dimension(1000, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jBsalirMENSAJE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerror-01.png"))); // NOI18N
-        jBsalirMENSAJE.setBorder(null);
-        jBsalirMENSAJE.setContentAreaFilled(false);
-        jBsalirMENSAJE.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerrorIN-01.png"))); // NOI18N
-        jBsalirMENSAJE.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/ACEPTARerrorIN-01.png"))); // NOI18N
-        getContentPane().add(jBsalirMENSAJE, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, 210, 60));
-
-        jLMENSAJEexitoso.setFont(new java.awt.Font("Montserrat Medium", 1, 14)); // NOI18N
-        jLMENSAJEexitoso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLMENSAJEexitoso.setText("Afiliado guardado con exito!");
-        getContentPane().add(jLMENSAJEexitoso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 220, 40));
-
-        jLfondoalert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/Joption-01.png"))); // NOI18N
-        getContentPane().add(jLfondoalert, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, 410, 440));
 
         jPanel1.setBackground(new java.awt.Color(250, 250, 250));
         jPanel1.setMinimumSize(new java.awt.Dimension(1120, 720));
@@ -287,7 +269,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBcarnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcarnetActionPerformed
-     
+
     }//GEN-LAST:event_jBcarnetActionPerformed
 
     private void jBCrearOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearOrdenActionPerformed
@@ -317,6 +299,7 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
 
     private void jBagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarActionPerformed
         // TODO add your handling code here:
+
         try {
             String nombre = jTNombre.getText().trim();
             String apellido = jTApellido1.getText().trim();
@@ -336,6 +319,9 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
             jTtelefono.setText("   Telefono");
             jTdireccion.setText("   Domicilio");
             jCPlan1.setSelectedIndex(0);
+            CargaExitosa cE = new CargaExitosa(principal);
+            principal.agregarComponenteAlEscritorio(cE);
+            mostrarAlerta();
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese valores enteros válidos.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -473,13 +459,10 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBagregar;
     private javax.swing.JButton jBcarnet;
     private javax.swing.JButton jBlimpiar;
-    private javax.swing.JButton jBsalirMENSAJE;
     private javax.swing.JComboBox<Plan> jCBPlan;
     private javax.swing.JComboBox<Plan> jCPlan1;
-    private javax.swing.JLabel jLMENSAJEexitoso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLfondoVista;
-    private javax.swing.JLabel jLfondoalert;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTAfiliados;
@@ -541,7 +524,14 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         }
     }
 
+    private void mostrarAlerta() {
+        CargaExitosa cE = new CargaExitosa(principal);
+        principal.agregarComponenteAlEscritorio(cE);
 
+        cE.setVisible(true);
+        
+        cE.moveToFront();
 
+    }
 
 }

@@ -43,6 +43,7 @@ public class Registrarse extends javax.swing.JFrame {
         jTContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLSalirdeInterfaz2.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
@@ -133,6 +134,7 @@ public class Registrarse extends javax.swing.JFrame {
         getContentPane().add(jTContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 200, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLSalirdeInterfaz2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLSalirdeInterfaz2MouseClicked

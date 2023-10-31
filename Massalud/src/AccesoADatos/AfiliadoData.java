@@ -6,6 +6,7 @@ package AccesoADatos;
 
 import Entidades.Afiliado;
 import Entidades.Plan;
+import Vistas.CargaExitosa;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,12 +21,13 @@ import javax.swing.JOptionPane;
  * @author Miguel
  */
 public class AfiliadoData {
-    
+
     private Connection con = null;
     private PlanData planData = new PlanData();
+
     public AfiliadoData() {
         con = Conexion.getConexion();
-        
+
     }
 
     public void altaAfilidado(Afiliado afiliado) {
@@ -40,11 +42,11 @@ public class AfiliadoData {
             ps.setInt(6, afiliado.getPlan().getIdPlan());
             ps.setBoolean(7, afiliado.isActivo());
             ps.executeUpdate();
-            
+
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
                 afiliado.setIdAfiliado(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Afiliado añadido con exito.");
+                
             }
             ps.close();
         } catch (SQLException ex) {
@@ -69,11 +71,11 @@ public class AfiliadoData {
                 afiliado.setApellido(rs.getString("apellido"));
                 afiliado.setDni(rs.getInt("dni"));
                 afiliado.setDomicilio(rs.getString("domicilio"));
-                afiliado.setTelefono(rs.getInt("telefono"));  
+                afiliado.setTelefono(rs.getInt("telefono"));
                 afiliado.setPlan(planData.buscarPlanPorId(rs.getInt("idPlan")));
                 afiliado.setActivo(rs.getBoolean("activo"));
 
-            } else{
+            } else {
                 JOptionPane.showMessageDialog(null, "No existe el afiliado");
             }
             ps.close();
@@ -104,7 +106,7 @@ public class AfiliadoData {
                 afiliado.setDni(rs.getInt("dni"));
                 afiliado.setDomicilio(rs.getString("domicilio"));
                 afiliado.setTelefono(rs.getInt("telefono"));
-                 afiliado.setPlan(planData.buscarPlanPorId(rs.getInt("idPlan")));
+                afiliado.setPlan(planData.buscarPlanPorId(rs.getInt("idPlan")));
                 afiliado.setActivo(rs.getBoolean("activo"));
 
             } else {
@@ -190,13 +192,14 @@ public class AfiliadoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Afiliado " + ex.getMessage());
         }
     }
-public List<Afiliado> buscarAfiliadosPorPlan(int idPlan){
+
+    public List<Afiliado> buscarAfiliadosPorPlan(int idPlan) {
         List<Afiliado> afiliados = new ArrayList<>();
-        
+
         String sql = "SELECT * FROM afiliado WHERE idPlan = ? AND activo = 1";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-             ps.setInt(1, idPlan);
+            ps.setInt(1, idPlan);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

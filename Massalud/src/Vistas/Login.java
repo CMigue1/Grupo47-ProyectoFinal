@@ -22,6 +22,7 @@ public class Login extends javax.swing.JFrame {
         jTContrasen.setForeground(Color.white);
         JTextField jTUsuari=new JTextField();
         jTUsuari.setOpaque(false);
+        
     }
 
   
@@ -38,7 +39,8 @@ public class Login extends javax.swing.JFrame {
         fondo = new javax.swing.JLabel();
         BarraSuperior = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -108,6 +110,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(BarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 50));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLSalirdeInterfaz2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLSalirdeInterfaz2MouseClicked

@@ -65,7 +65,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jBuscarporPRESTADOR = new javax.swing.JButton();
         jBuscarporAFILIADO1 = new javax.swing.JButton();
         jLventanaEmergente = new javax.swing.JLabel();
-        txtFormaPago = new javax.swing.JTextField();
         txtImporte = new javax.swing.JTextField();
         txtNroAfiliado = new javax.swing.JTextField();
         txtMatriculaPrestador = new javax.swing.JTextField();
@@ -79,6 +78,7 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         tbOrden = new javax.swing.JTable();
         dcFechaTabla = new com.toedter.calendar.JDateChooser();
         cdFecha = new com.toedter.calendar.JDateChooser();
+        cbxFormaPago = new javax.swing.JComboBox<>();
         jLfondoVista = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -104,7 +104,7 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         getContentPane().add(jLMENSAJEexitoso, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 220, 40));
 
         jLfondoalert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/Imagenes/Joption-01.png"))); // NOI18N
-        getContentPane().add(jLfondoalert, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 410, 440));
+        getContentPane().add(jLfondoalert, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 410, 440));
 
         jBuscarporPRESTADOR.setBorder(null);
         jBuscarporPRESTADOR.setContentAreaFilled(false);
@@ -130,15 +130,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
 
         jLventanaEmergente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/IMAGENES/VENTANAemergente-01.png"))); // NOI18N
         getContentPane().add(jLventanaEmergente, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 260, 90));
-
-        txtFormaPago.setBackground(new java.awt.Color(246, 246, 248));
-        txtFormaPago.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
-        txtFormaPago.setForeground(new java.awt.Color(0, 0, 0));
-        txtFormaPago.setText("Forma Pago");
-        txtFormaPago.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
-        txtFormaPago.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        txtFormaPago.setSelectionColor(new java.awt.Color(0, 0, 56));
-        getContentPane().add(txtFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 300, 40));
 
         txtImporte.setBackground(new java.awt.Color(246, 246, 248));
         txtImporte.setFont(new java.awt.Font("Montserrat", 0, 12)); // NOI18N
@@ -244,7 +235,13 @@ public class VistaOrden extends javax.swing.JInternalFrame {
 
         dcFechaTabla.setDateFormatString("dd MM yyyy");
         getContentPane().add(dcFechaTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 570, 240, 40));
+
+        cdFecha.setDateFormatString("dd MM yyyy");
         getContentPane().add(cdFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 300, 40));
+
+        cbxFormaPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Débito" }));
+        cbxFormaPago.setSelectedIndex(-1);
+        getContentPane().add(cbxFormaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 252, 300, 40));
 
         jLfondoVista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/VISTAordenes-01.png"))); // NOI18N
         jLfondoVista.setMaximumSize(new java.awt.Dimension(1062, 720));
@@ -303,15 +300,15 @@ public class VistaOrden extends javax.swing.JInternalFrame {
             if (cdFecha.getDate() != null) {
                 fechaNacimiento = cdFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             }
-            String formaPago = txtFormaPago.getText().trim();
-            Double importe = Double.parseDouble(txtImporte.getText());
-            afiliado = afilData.buscarAfiliado(validarEntero(txtNroAfiliado.getText()));
-            prestador = presData.buscarPrestador(validarEntero(txtMatriculaPrestador.getText()));
+            String formaPago = String.valueOf(cbxFormaPago.getSelectedItem());
+            Double importe = Double.parseDouble(txtImporte.getText().trim());
+            afiliado = afilData.buscarAfiliado(validarEntero(txtNroAfiliado.getText().trim()));
+            prestador = presData.buscarPrestador(validarEntero(txtMatriculaPrestador.getText().trim()));            
+            orden = new Orden(fechaNacimiento, formaPago, importe, afiliado, prestador);
+            ordenData.altaOrden(orden);
             jLMENSAJEexitoso.setVisible(true);
             jLfondoalert.setVisible(true);
             jBsalirMENSAJE.setVisible(true);
-            orden = new Orden(fechaNacimiento, formaPago, importe, afiliado, prestador);
-            ordenData.altaOrden(orden);
         } catch (NumberFormatException e) {
 
         }
@@ -321,11 +318,17 @@ public class VistaOrden extends javax.swing.JInternalFrame {
         jLMENSAJEexitoso.setVisible(false);
         jLfondoalert.setVisible(false);
         jBsalirMENSAJE.setVisible(false);
+        cbxFormaPago.setSelectedIndex(-1);
+        txtImporte.setText("");
+        txtMatriculaPrestador.setText("");
+        txtNroAfiliado.setText("");
+        cdFecha.setDate(null);
     }//GEN-LAST:event_jBsalirMENSAJEActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrear;
+    private javax.swing.JComboBox<String> cbxFormaPago;
     private com.toedter.calendar.JDateChooser cdFecha;
     private com.toedter.calendar.JDateChooser dcFechaTabla;
     private javax.swing.JButton jBbuscar;
@@ -342,7 +345,6 @@ public class VistaOrden extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLventanaEmergente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbOrden;
-    private javax.swing.JTextField txtFormaPago;
     private javax.swing.JTextField txtImporte;
     private javax.swing.JTextField txtMatriculaPrestador;
     private javax.swing.JTextField txtNroAfiliado;
