@@ -117,33 +117,18 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTtelefonoMouseClicked(evt);
             }
         });
-        jTtelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTtelefonoActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTtelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 290, 30));
 
         jTNombre.setBackground(new java.awt.Color(255, 255, 255));
         jTNombre.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTNombre.setForeground(new java.awt.Color(153, 153, 153));
         jTNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTNombre.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTNombreMouseClicked(evt);
-            }
-        });
         jPanel1.add(jTNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 210, 290, 30));
 
         jTApellido1.setBackground(new java.awt.Color(255, 255, 255));
         jTApellido1.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTApellido1.setForeground(new java.awt.Color(153, 153, 153));
         jTApellido1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTApellido1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTApellido1MouseClicked(evt);
-            }
-        });
         jTApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTApellido1ActionPerformed(evt);
@@ -155,11 +140,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         jTdocumento.setFont(new java.awt.Font("Montserrat Medium", 0, 10)); // NOI18N
         jTdocumento.setForeground(new java.awt.Color(153, 153, 153));
         jTdocumento.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jTdocumento.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTdocumentoMouseClicked(evt);
-            }
-        });
         jPanel1.add(jTdocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, 290, 30));
 
         jTdireccion.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,11 +151,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
                 jTdireccionMouseClicked(evt);
             }
         });
-        jTdireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTdireccionActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 290, 30));
 
         jCPlan1.setBackground(new java.awt.Color(255, 255, 255));
@@ -183,11 +158,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         jCPlan1.setForeground(new java.awt.Color(153, 153, 153));
         jCPlan1.setToolTipText("Tipo de Plan");
         jCPlan1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102)));
-        jCPlan1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCPlan1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 390, 290, 30));
 
         jCBPlan.setToolTipText("");
@@ -316,20 +286,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         cargarDatos();
     }//GEN-LAST:event_jCBPlanActionPerformed
 
-    private void jTtelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTtelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTtelefonoActionPerformed
-
-    private void jTdireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTdireccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTdireccionActionPerformed
-
-    private void jCPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCPlan1ActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_jCPlan1ActionPerformed
-
     private void jBagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarActionPerformed
         // TODO add your handling code here:
 
@@ -366,11 +322,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_afilActivosActionPerformed
 
-    private void jTNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTNombreMouseClicked
-      
-
-    }//GEN-LAST:event_jTNombreMouseClicked
-
     private void jBlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimpiarActionPerformed
         // TODO add your handling code here:
         jTNombre.setText("");
@@ -380,17 +331,6 @@ public class VistaAfiliado extends javax.swing.JInternalFrame {
         jTdireccion.setText("");
         jCPlan1.setSelectedIndex(0);
     }//GEN-LAST:event_jBlimpiarActionPerformed
-
-    private void jTApellido1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTApellido1MouseClicked
-    
-        
-
-    }//GEN-LAST:event_jTApellido1MouseClicked
-
-    private void jTdocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdocumentoMouseClicked
-    
-
-    }//GEN-LAST:event_jTdocumentoMouseClicked
 
     private void jTdireccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTdireccionMouseClicked
        

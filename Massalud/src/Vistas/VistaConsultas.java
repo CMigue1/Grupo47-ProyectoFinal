@@ -449,11 +449,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         jCPlan1.setToolTipText("Tipo de Plan");
         jCPlan1.setBorder(null);
         jCPlan1.setEnabled(false);
-        jCPlan1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCPlan1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(jCPlan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 260, 110, 30));
 
         cbxEspecialidad.setBackground(new java.awt.Color(255, 255, 255));
@@ -462,11 +457,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         cbxEspecialidad.setToolTipText("Tipo de Plan");
         cbxEspecialidad.setBorder(null);
         cbxEspecialidad.setEnabled(false);
-        cbxEspecialidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbxEspecialidadActionPerformed(evt);
-            }
-        });
         getContentPane().add(cbxEspecialidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 490, 160, 30));
 
         cbxEstadoAf.setBackground(new java.awt.Color(255, 255, 255));
@@ -813,15 +803,6 @@ public class VistaConsultas extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_btnGuardadAfActionPerformed
-
-    private void jCPlan1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCPlan1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jCPlan1ActionPerformed
-
-    private void cbxEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEspecialidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbxEspecialidadActionPerformed
 
     private void btnGuardarPrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPrActionPerformed
         btnEditarPr.setVisible(true);
